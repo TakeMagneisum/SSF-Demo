@@ -1,0 +1,9 @@
+page,phase,initial external JS count,raw JS bytes,per-file gzip JS bytes,raw HTML bytes,gzip HTML bytes
+index.html,1,12,3383996,411514,38820,9383
+index.html,2,6,86737,24881,38724,9462
+explore-map.html,1,12,3505245,453284,8142,2482
+explore-map.html,2,6,208064,66689,17605,4180
+find-help.html,1,15,3436564,426931,45297,9865
+find-help.html,2,15,3436909,427061,45285,9865
+discover.html,1,4,82995,25207,12757,4091
+discover.html,2,4,82995,25207,12753,4094

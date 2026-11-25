@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="referrer" content="no-referrer">
+  <!-- SSF DEMO NORMALIZED -->
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="stylesheet" href="assets/demo.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore by map | Single Step Forward</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/styles.css?v=phase4">
+  <link rel="stylesheet" href="assets/explore-map.css?v=phase2">
+  <script src="assets/coverage-index.js?v=phase2" defer></script>
+  <script src="assets/calm.js?v=phase4" defer></script>
+  <script src="assets/i18n.js?v=phase6" defer></script>
+  <script src="assets/maps/world-overview.js" defer></script>
+  <script src="assets/maps/georgia-county-names.js" defer></script>
+  <script src="assets/phase3-postal.js" defer></script>
+  <script src="assets/phase3-map-ui.js?v=phase4" defer></script>
+  <script src="assets/explore-map.js?v=phase4" defer></script>
+<link rel="stylesheet" href="assets/phase3.css">
+<!-- SSF P4 ASSETS START --><link rel="stylesheet" href="assets/phase4.css"><script src="assets/phase4-preferences.js"></script><!-- SSF P4 ASSETS END --></head>
+<body>
+  <aside class="ssf-demo-banner" role="note" aria-label="Demonstration website"><strong>Demonstration website.</strong> Interface improvements are in progress. Details may change; confirm assistance directly with providers.</aside>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="urgent-bar" role="region" aria-label="Emergency information"><div class="shell urgent-inner"><p><strong>Immediate danger?</strong> Contact emergency services where you are. Do not wait for this website.</p><p>For a mental health or suicide crisis, contact a local crisis service.</p></div></div><header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="index.html" aria-label="Single Step Forward home">
+        <img src="assets/brand-mark.svg" alt="" width="52" height="52">
+        <span><strong>Single Step Forward</strong><small>Awareness and local navigation</small></span>
+      </a>
+      <!-- SSF DISPLAY START --><div class="ssf-display" data-ssf-display hidden><label class="ssf-appearance"><span>Appearance</span><select data-ssf-preference="appearance"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label><details><summary>Accessibility settings</summary><div class="ssf-pref-panel"><p>Adjust this website without changing your browser settings. You can still use browser zoom.</p><div class="ssf-pref-grid"><label><span>Text size</span><select data-ssf-preference="text"><option value="standard">Standard</option><option value="large">Large (125%)</option><option value="larger">Larger (150%)</option></select></label><label><span>Reading spacing</span><select data-ssf-preference="spacing"><option value="standard">Standard</option><option value="relaxed">Relaxed</option></select></label><label><span>Contrast</span><select data-ssf-preference="contrast"><option value="system">System / standard</option><option value="high">Higher contrast</option></select></label><label><span>Motion</span><select data-ssf-preference="motion"><option value="system">Follow system</option><option value="reduced">Reduce motion</option></select></label><label><span>Layout spacing</span><select data-ssf-preference="density"><option value="comfortable">Comfortable</option><option value="compact">Compact</option></select></label></div><p>Calm View is separate: it uses dark colors, reduces motion and hides decorative artwork. Turn it off to use your chosen appearance. System reduced motion and forced colors always take priority.</p><p>Display settings are stored on this device when possible. Reset does not change language, Calm View, selected guides or handouts.</p><p role="status" data-ssf-pref-status></p><div class="ssf-pref-actions"><button type="button" data-ssf-pref-reset>Reset display settings</button><button type="button" data-ssf-pref-close>Close settings</button></div></div></details></div><!-- SSF DISPLAY END --><button type="button" class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">Menu</button><nav aria-label="Main navigation" id="main-navigation" data-ssf-nav><a href="index.html">Home</a><a href="discover.html">Find help</a><a href="explore-map.html" aria-current="page">Explore by map</a><a href="learn/index.html">Learn</a><a href="before-you-call.html">Before you call or visit</a><a href="before-you-travel.html">Before you travel</a><div class="nav-preferences"><button class="calm-toggle" type="button" data-calm-toggle aria-pressed="false">Calm View</button><label class="language-control"><span aria-hidden="true">文/A</span><span class="sr-only">Language</span><select data-language-select aria-label="Language"><option value="en">English</option><option value="es">Español</option></select></label></div></nav>
+    </div>
+  </header>
+  <main id="main" class="shell map-page">
+    <h1>Explore by map</h1>
+    <p>Choose a country or territory, or search by place name.</p>
+    <p id="map-breadcrumb" aria-label="Current geographic location">World</p><p id="map-back" hidden><a href="explore-map.html">Back to world map</a></p>
+    <p id="map-back-us" hidden><a href="explore-map.html?country=US">All US guides</a></p>
+    <p id="map-back-ga" hidden><a href="explore-map.html?country=US&amp;state=GA">All Georgia guides</a></p>
+    <div class="map-filters" id="primary-map-filters" hidden>
+      <label for="map-country">Country or territory
+        <select id="map-country"><option value="">All countries and territories</option><option value="US">United States</option><option value="PR">Puerto Rico</option><option value="CL">Chile</option><option value="GB">United Kingdom</option><option value="NZ">New Zealand</option></select>
+      </label>
+      <label for="map-search">Search by place
+        <input id="map-search" type="search">
+      </label>
+      <button id="map-clear-search" type="button" class="button button-quiet" hidden>Clear place search</button>
+      <button id="map-reset" type="button" class="button button-quiet">Reset filters</button>
+    </div>
+    <div class="map-layout">
+      <section id="overview-map" class="map-panel" hidden aria-labelledby="overview-title">
+        <h2 id="overview-title"></h2>
+        <a class="geo-skip" href="#map-list-title">Skip map shapes to guide list</a><p id="world-geo-preview" class="geo-preview"></p><svg id="overview-svg" role="group" aria-label="World or Caribbean map"></svg><div class="geo-details"><p id="world-geo-selection" role="status">Choose a place to see its guide coverage.</p><a id="world-geo-action" class="button" hidden>Continue to selected place</a><details id="world-geo-guides" hidden><summary>View matching reviewed guides</summary><ul id="world-geo-guide-list" class="geo-guide-links"></ul></details><div id="world-geo-controls" class="geo-controls" hidden><button id="world-geo-zoom" type="button">Zoom in</button><button id="world-geo-zoom-reset" type="button">Reset zoom</button><button id="world-geo-clear" type="button" hidden>Clear selected place</button></div></div>
+        <ul id="overview-links" class="overview-links"></ul>
+        <p class="map-credit"><a href="https://www.naturalearthdata.com/about/terms-of-use/">Made with Natural Earth.</a></p>
+      </section>
+      <section id="us-map" class="map-panel" hidden aria-labelledby="us-map-title">
+        <h2 id="us-map-title">United States</h2>
+        <div id="us-map-graphic" hidden>
+          <p><span class="state-legend-swatch" aria-hidden="true"></span> Gold shows states with local guides.</p>
+          <a class="geo-skip" href="#map-list-title">Skip map shapes to guide list</a><p id="state-geo-preview" class="geo-preview"></p><svg id="us-map-svg" viewBox="0 0 900 658" role="group" aria-label="US state map"></svg><div class="geo-details"><p id="state-geo-selection" role="status">Choose a place to see its guide coverage.</p><a id="state-geo-action" class="button" hidden>Continue to selected place</a><details id="state-geo-guides" hidden><summary>View matching reviewed guides</summary><ul id="state-geo-guide-list" class="geo-guide-links"></ul></details><div id="state-geo-controls" class="geo-controls" hidden><button id="state-geo-zoom" type="button">Zoom in</button><button id="state-geo-zoom-reset" type="button">Reset zoom</button><button id="state-geo-clear" type="button" hidden>Clear selected place</button></div></div>
+          <p class="map-credit">State boundaries from the <a href="https://www.census.gov/geographies/mapping-files/2024/geo/carto-boundary-file.html">U.S. Census Bureau, 2024</a>.</p>
+        </div>
+        <div class="map-filters">
+          <label for="state-search">Find a state
+            <input id="state-search" type="search">
+          </label>
+        </div>
+        <p id="state-search-empty" hidden>No matching states.</p>
+        <ul id="state-links" class="overview-links"></ul>
+      </section>
+      <section id="london-map" class="map-panel" hidden aria-labelledby="london-title">
+        <h2 id="london-title">Greater London</h2>
+        <p>Choose an area to see its guide. Each provider lists its own service area.</p><a href="#map-list-title">Skip map shapes to guide list</a>
+        <p id="map-hover" aria-hidden="true"></p>
+        <svg id="borough-map" viewBox="28 0 820 625" role="group" aria-labelledby="london-title"></svg>
+        <button id="pick-city" class="button button-quiet" type="button">Select City of London</button>
+        <p id="map-selection" aria-live="polite">Select an area on the map.</p><div class="geo-controls"><button id="london-zoom" type="button">Zoom in</button><button id="london-reset" type="button">Reset zoom</button><button id="london-clear" type="button" hidden>Clear selected place</button></div>
+        <a id="map-open" class="button" hidden><span>Open guide</span> <span id="map-open-name"></span></a>
+        <p class="map-credit"><a href="https://data.london.gov.uk/dataset/statistical-gis-boundary-files-for-london-20od9">Greater London Authority boundary data</a> · <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/">Open Government Licence v2</a><br>
+        Contains National Statistics data © Crown copyright and database right [2015].<br>
+        Contains Ordnance Survey data © Crown copyright and database right [2015].</p>
+      </section>
+      <section class="map-panel" aria-labelledby="map-list-title">
+        <h2 id="map-list-title"><span>Local guides</span><span id="map-state-title" hidden></span></h2>
+        <p id="geometry-status" role="status" hidden></p><p id="map-status" role="status">All local guides are listed below. Interactive filtering requires JavaScript and the coverage index.</p>
+        <p id="map-coverage" hidden>Guides cover selected local areas. Each provider lists its own service area.</p>
+        <p id="map-atlanta-scope" hidden>The Atlanta guide focuses on the city. Check each provider’s service area.</p>
+        <p id="map-unpublished" hidden>No local guides published here yet. Assistance may still exist. Search official municipal or government sites for your place and type of need. <a href="discover.html#topics">Learn useful search terms</a> (prepared US service links are US-specific).</p>
+        <p id="map-discover" hidden><a href="discover.html">Explore help by US ZIP code</a></p>
+        <p id="map-empty" hidden>No matching guides. Try another place or reset the filters.</p>
+        <ul id="map-guides">
+<!-- SSF STATIC GUIDES START -->
+          <li><a href="find-help.html?area=albuquerque">Albuquerque, New Mexico</a></li>
+          <li><a href="find-help.html?area=atlanta">Atlanta, Georgia</a></li>
+          <li><a href="find-help.html?area=nz-auckland-metro">Auckland metropolitan area, New Zealand</a></li>
+          <li><a href="find-help.html?area=austin">Austin, Texas</a></li>
+          <li><a href="find-help.html?area=baltimore">Baltimore, Maryland</a></li>
+          <li><a href="find-help.html?area=london-barking-and-dagenham">Barking and Dagenham, Greater London</a></li>
+          <li><a href="find-help.html?area=london-barnet">Barnet, Greater London</a></li>
+          <li><a href="find-help.html?area=bayamon-pr">Bayamón, Puerto Rico</a></li>
+          <li><a href="find-help.html?area=london-bexley">Bexley, Greater London</a></li>
+          <li><a href="find-help.html?area=boston">Boston, Massachusetts</a></li>
+          <li><a href="find-help.html?area=london-brent">Brent, Greater London</a></li>
+          <li><a href="find-help.html?area=london-bromley">Bromley, Greater London</a></li>
+          <li><a href="find-help.html?area=london-camden">Camden, Greater London</a></li>
+          <li><a href="find-help.html?area=carmel">Carmel, Indiana</a></li>
+          <li><a href="find-help.html?area=carolina-pr">Carolina, Puerto Rico</a></li>
+          <li><a href="find-help.html?area=charlotte">Charlotte, North Carolina</a></li>
+          <li><a href="find-help.html?area=chicago">Chicago, Illinois</a></li>
+          <li><a href="find-help.html?area=nz-christchurch-metro">Christchurch metropolitan area, New Zealand</a></li>
+          <li><a href="find-help.html?area=london-city-of-london">City of London, Greater London</a></li>
+          <li><a href="find-help.html?area=columbus">Columbus, Ohio</a></li>
+          <li><a href="find-help.html?area=london-croydon">Croydon, Greater London</a></li>
+          <li><a href="find-help.html?area=dallas">Dallas County, Texas</a></li>
+          <li><a href="find-help.html?area=denver">Denver County, Colorado</a></li>
+          <li><a href="find-help.html?area=detroit">Detroit, Michigan</a></li>
+          <li><a href="find-help.html?area=nz-dunedin-metro">Dunedin metropolitan area, New Zealand</a></li>
+          <li><a href="find-help.html?area=london-ealing">Ealing, Greater London</a></li>
+          <li><a href="find-help.html?area=elpaso">El Paso County, Colorado</a></li>
+          <li><a href="find-help.html?area=london-enfield">Enfield, Greater London</a></li>
+          <li><a href="find-help.html?area=erie">Erie County, New York</a></li>
+          <li><a href="find-help.html?area=fort-worth">Fort Worth, Texas</a></li>
+          <li><a href="find-help.html?area=fresno">Fresno, California</a></li>
+          <li><a href="find-help.html?area=greater-concepcion">Greater Concepción, Chile</a></li>
+          <li><a href="find-help.html?area=greater-valparaiso">Greater Valparaíso, Chile</a></li>
+          <li><a href="find-help.html?area=london-greenwich">Greenwich, Greater London</a></li>
+          <li><a href="find-help.html?area=london-hackney">Hackney, Greater London</a></li>
+          <li><a href="find-help.html?area=nz-hamilton-metro">Hamilton metropolitan area, New Zealand</a></li>
+          <li><a href="find-help.html?area=london-hammersmith-and-fulham">Hammersmith and Fulham, Greater London</a></li>
+          <li><a href="find-help.html?area=london-haringey">Haringey, Greater London</a></li>
+          <li><a href="find-help.html?area=london-harrow">Harrow, Greater London</a></li>
+          <li><a href="find-help.html?area=london-havering">Havering, Greater London</a></li>
+          <li><a href="find-help.html?area=london-hillingdon">Hillingdon, Greater London</a></li>
+          <li><a href="find-help.html?area=london-hounslow">Hounslow, Greater London</a></li>
+          <li><a href="find-help.html?area=houston">Houston, Texas</a></li>
+          <li><a href="find-help.html?area=indian-harbour-beach">Indian Harbour Beach, Florida</a></li>
+          <li><a href="find-help.html?area=indianapolis">Indianapolis, Indiana</a></li>
+          <li><a href="find-help.html?area=london-islington">Islington, Greater London</a></li>
+          <li><a href="find-help.html?area=jacksonville">Jacksonville, Florida</a></li>
+          <li><a href="find-help.html?area=kansas-city">Kansas City, Missouri</a></li>
+          <li><a href="find-help.html?area=london-kensington-and-chelsea">Kensington and Chelsea, Greater London</a></li>
+          <li><a href="find-help.html?area=london-kingston-upon-thames">Kingston upon Thames, Greater London</a></li>
+          <li><a href="find-help.html?area=london-lambeth">Lambeth, Greater London</a></li>
+          <li><a href="find-help.html?area=las-vegas">Las Vegas, Nevada</a></li>
+          <li><a href="find-help.html?area=lewis-and-clark-county">Lewis and Clark County, Montana</a></li>
+          <li><a href="find-help.html?area=london-lewisham">Lewisham, Greater London</a></li>
+          <li><a href="find-help.html?area=liberty">Liberty County, Georgia</a></li>
+          <li><a href="find-help.html?area=long-beach">Long Beach, California</a></li>
+          <li><a href="find-help.html?area=los-angeles">Los Angeles, California</a></li>
+          <li><a href="find-help.html?area=louisville-jefferson-county">Louisville/Jefferson County, Kentucky</a></li>
+          <li><a href="find-help.html?area=madison">Madison County, New York</a></li>
+          <li><a href="find-help.html?area=memphis">Memphis, Tennessee</a></li>
+          <li><a href="find-help.html?area=london-merton">Merton, Greater London</a></li>
+          <li><a href="find-help.html?area=mesa">Mesa, Arizona</a></li>
+          <li><a href="find-help.html?area=miami">Miami, Florida</a></li>
+          <li><a href="find-help.html?area=milwaukee">Milwaukee, Wisconsin</a></li>
+          <li><a href="find-help.html?area=minneapolis">Minneapolis, Minnesota</a></li>
+          <li><a href="find-help.html?area=missoula-county">Missoula County, Montana</a></li>
+          <li><a href="find-help.html?area=nashville">Nashville, Tennessee</a></li>
+          <li><a href="find-help.html?area=new-york-city">New York City, New York</a></li>
+          <li><a href="find-help.html?area=london-newham">Newham, Greater London</a></li>
+          <li><a href="find-help.html?area=oakland">Oakland, California</a></li>
+          <li><a href="find-help.html?area=oklahoma-city">Oklahoma City, Oklahoma</a></li>
+          <li><a href="find-help.html?area=omaha">Omaha, Nebraska</a></li>
+          <li><a href="find-help.html?area=orlando">Orlando, Florida</a></li>
+          <li><a href="find-help.html?area=philadelphia">Philadelphia, Pennsylvania</a></li>
+          <li><a href="find-help.html?area=phoenix">Phoenix, Arizona</a></li>
+          <li><a href="find-help.html?area=plainfield">Plainfield, Illinois</a></li>
+          <li><a href="find-help.html?area=plymouth">Plymouth County, Massachusetts</a></li>
+          <li><a href="find-help.html?area=ponce-pr">Ponce, Puerto Rico</a></li>
+          <li><a href="find-help.html?area=portland">Portland, Oregon</a></li>
+          <li><a href="find-help.html?area=london-redbridge">Redbridge, Greater London</a></li>
+          <li><a href="find-help.html?area=london-richmond-upon-thames">Richmond upon Thames, Greater London</a></li>
+          <li><a href="find-help.html?area=sacramento">Sacramento, California</a></li>
+          <li><a href="find-help.html?area=san-antonio">San Antonio, Texas</a></li>
+          <li><a href="find-help.html?area=san-diego">San Diego, California</a></li>
+          <li><a href="find-help.html?area=san-francisco">San Francisco, California</a></li>
+          <li><a href="find-help.html?area=san-jose">San Jose, California</a></li>
+          <li><a href="find-help.html?area=san-juan-pr">San Juan, Puerto Rico</a></li>
+          <li><a href="find-help.html?area=santiago">Santiago Metropolitan Area, Chile</a></li>
+          <li><a href="find-help.html?area=savannah-chatham">Savannah / Chatham County, Georgia</a></li>
+          <li><a href="find-help.html?area=seattle">Seattle, Washington</a></li>
+          <li><a href="find-help.html?area=london-southwark">Southwark, Greater London</a></li>
+          <li><a href="find-help.html?area=suburban-cook-county">Suburban Cook County, Illinois</a></li>
+          <li><a href="find-help.html?area=london-sutton">Sutton, Greater London</a></li>
+          <li><a href="find-help.html?area=nz-tauranga-metro">Tauranga metropolitan area, New Zealand</a></li>
+          <li><a href="find-help.html?area=london-tower-hamlets">Tower Hamlets, Greater London</a></li>
+          <li><a href="find-help.html?area=tucson">Tucson, Arizona</a></li>
+          <li><a href="find-help.html?area=tulsa">Tulsa, Oklahoma</a></li>
+          <li><a href="find-help.html?area=virginia-beach">Virginia Beach, Virginia</a></li>
+          <li><a href="find-help.html?area=volusia">Volusia County, Florida</a></li>
+          <li><a href="find-help.html?area=wake">Wake County, North Carolina</a></li>
+          <li><a href="find-help.html?area=london-waltham-forest">Waltham Forest, Greater London</a></li>
+          <li><a href="find-help.html?area=london-wandsworth">Wandsworth, Greater London</a></li>
+          <li><a href="find-help.html?area=washington-dc">Washington, District of Columbia</a></li>
+          <li><a href="find-help.html?area=nz-wellington-metro">Wellington metropolitan area, New Zealand</a></li>
+          <li><a href="find-help.html?area=london-westminster">Westminster, Greater London</a></li>
+          <li><a href="find-help.html?area=yellowstone-county">Yellowstone County, Montana</a></li>
+<!-- SSF STATIC GUIDES END -->
+        </ul>
+        <noscript><p>Use the guide links above or <a href="discover.html">explore types of help</a>.</p></noscript>
+      </section>
+      <section id="ga-map" class="map-panel" hidden aria-labelledby="ga-map-title">
+        <h2 id="ga-map-title">Georgia counties</h2>
+        <div id="ga-map-graphic" hidden>
+          <p><span class="state-legend-swatch" aria-hidden="true"></span> <span>Gold shows counties with local guides.</span></p>
+          <a class="geo-skip" href="#map-list-title">Skip map shapes to guide list</a><p id="county-geo-preview" class="geo-preview"></p><svg id="ga-map-svg" role="group" aria-label="Georgia county map"></svg><div class="geo-details"><p id="county-geo-selection" role="status">Choose a place to see its guide coverage.</p><a id="county-geo-action" class="button" hidden>Continue to selected place</a><details id="county-postal" hidden><summary>Existing guide ZIP suggestions</summary><p id="county-postal-text"></p><p>These are guide-level suggestions, not county ZIP lists. Postal delivery areas can cross county boundaries. A verified county crosswalk is not available.</p></details><details id="county-geo-guides" hidden><summary>View matching reviewed guides</summary><ul id="county-geo-guide-list" class="geo-guide-links"></ul></details><div id="county-geo-controls" class="geo-controls" hidden><button id="county-geo-zoom" type="button">Zoom in</button><button id="county-geo-zoom-reset" type="button">Reset zoom</button><button id="county-geo-clear" type="button" hidden>Clear selected place</button></div></div>
+          <p class="map-credit"><a href="https://www.census.gov/geographies/mapping-files/2024/geo/carto-boundary-file.html">County boundaries from the U.S. Census Bureau, 2024</a></p>
+        </div>
+        <div class="map-filters">
+          <label for="county-search">Find a Georgia county
+            <input id="county-search" type="search">
+          </label>
+        </div>
+        <p id="county-search-empty" role="status" hidden>No matching counties.</p>
+        <ul id="county-links" class="overview-links"></ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

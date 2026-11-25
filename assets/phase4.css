@@ -1,0 +1,139 @@
+/* Phase 4 shared appearance/reflow. Keep brand primitives unchanged. */
+@media screen {
+  :root { --focus-dark: #0b2d2b; --focus-light: #fffdf7; --control-border: #506b67; --reading-leading: 1.6; }
+  html[data-ssf-theme="dark"],html[data-calm="true"] {
+    --surface:var(--calm-bg);--surface-raised:var(--calm-surface);--text:var(--calm-text);--text-muted:var(--calm-muted);--link:var(--calm-accent);--border:var(--calm-border);--control-border:var(--calm-border);
+    --focus-dark:#071a19;--focus-light:#fffdf7;
+  }
+  html[data-ssf-theme="light"] {color-scheme:light;}
+  html[data-ssf-text="large"] {font-size:125%;}
+  html[data-ssf-text="larger"] {font-size:150%;}
+  html[data-ssf-spacing="relaxed"] {--body-leading:1.85;--reading-leading:1.85;}
+  html[data-ssf-spacing="relaxed"] :is(p,li,dd,blockquote,label) {line-height:1.85;letter-spacing:.025em;word-spacing:.075em;}
+  html[data-ssf-spacing="relaxed"] :is(h1,h2,h3,h4) {line-height:1.35;}
+  html[data-ssf-density="compact"] :is(.resource-card,.discovery-card,.map-panel,.phase3-map-graphic,.phase3-map-sidebar,.geo-details,.need-card,.standard-card,.learn-topic) {padding: .85rem;min-height:0;}
+  html[data-ssf-density="compact"] :is(.resource-grid,.discovery-grid,.phase3-world-grid,.map-layout,.possibility-grid,.standard-grid) {gap:.65rem;}
+  /* A two-color outline remains visible against light or dark adjacent surfaces. */
+  :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible {outline:3px solid var(--focus-light)!important;outline-offset:2px!important;box-shadow:0 0 0 5px var(--focus-dark)!important;}
+  :is(main,header,footer) {overflow-wrap:anywhere;}
+  :is(a,button,input,select,textarea,summary) {max-inline-size:100%;}
+  :is(.site-header,.content-side) {position:static;}
+  .site-header .nav-wrap {flex-wrap:wrap;gap:.65rem 1rem;padding-block:.65rem;height:auto;}
+  .site-header .brand {min-width:0;max-width:100%;flex:0 1 auto;}
+  .site-header .brand span {min-width:0;}
+  .site-header .brand img {flex:none;}
+  .site-header nav[data-ssf-nav] {flex:1 1 100%;justify-content:start;align-items:start;flex-wrap:wrap;gap:.25rem .75rem;white-space:normal;overflow:visible;}
+  .site-header nav[data-ssf-nav] a {font-size:.95rem;min-height:44px;white-space:normal;}
+  .site-header .nav-preferences {display:flex;flex-wrap:wrap;gap:.5rem;}
+  .site-header :is(.calm-toggle,.language-control,.menu-toggle) {min-height:44px;white-space:normal;max-width:100%;font-size:.95rem;}
+  .site-header .calm-toggle {width:auto;padding-inline:.65rem;}
+  .site-header .language-control select {min-height:44px;}
+  .site-header .calm-toggle::after {content:none;}
+  .ssf-display {display:flex;flex:1 1 auto;align-items:center;flex-wrap:wrap;gap:.5rem;max-width:100%;min-width:0;}
+  .ssf-display[hidden] {display:none!important;}
+  .ssf-appearance {display:flex;align-items:center;flex-wrap:wrap;gap:.35rem;min-width:0;font-weight:700;}
+  .ssf-display select,.ssf-display button,.ssf-display summary {font:inherit;color:var(--text,#17312f);background:var(--surface-raised,#fffdf7);border:1px solid var(--control-border,#506b67);border-radius:.45rem;min-height:44px;padding:.45rem .6rem;max-width:100%;}
+  .ssf-display summary {display:list-item;cursor:pointer;font-weight:700;}
+  .ssf-display details {min-width:0;max-width:100%;}
+  .ssf-display details[open] {flex-basis:100%;}
+  .ssf-display .ssf-pref-panel {background:var(--surface-raised,#fffdf7);color:var(--text,#17312f);border:1px solid var(--control-border,#506b67);border-radius:.65rem;padding:.8rem;max-width:46rem;margin-block:.5rem;}
+  .ssf-pref-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:.65rem;}
+  .ssf-pref-grid label {display:grid;gap:.2rem;min-width:0;font-weight:650;}
+  .ssf-pref-panel p,.ssf-pref-panel small {color:var(--text-muted,#506b67);font-size:.9rem;margin-block:.45rem;}
+  .ssf-pref-actions {display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem;}
+  .ssf-pref-actions button {cursor:pointer;}
+  .ssf-display option {color:var(--text,#17312f)!important;background:var(--surface-raised,#fffdf7)!important;}
+  .ssf-display select {color:var(--text,#17312f)!important;background:var(--surface-raised,#fffdf7)!important;}
+  .ssf-display label {color:var(--text,#17312f);}
+  .ssf-pref-panel [role=status] {min-height:1.5em;}
+  .skip-link {background:var(--surface-raised);color:var(--text);}
+  .phase3-map-sidebar input,.map-filters :is(input,select) {border-color:var(--control-border);}
+  :is(#state-links,#county-links) {max-height:none;overflow:visible;}
+  .phase3-place-list li {flex-wrap:wrap;}
+  .geo-controls button,.geo-details summary,.geo-guide-links a {min-height:44px;}
+  .geo-details,.phase3-map-sidebar,.map-panel {overflow-wrap:anywhere;}
+  .map-panel :is(svg,select,input) {max-width:100%;}
+  .geo-details a {white-space:normal;}
+  :is(#home-world-svg,#overview-svg,#us-map-svg,#ga-map-svg) a:focus-visible path,#borough-map path:focus-visible {stroke-width:4;stroke-dasharray:3 2;}
+  .sheet-review-shortcut {display:none;font:inherit;color:var(--text);background:var(--surface-raised);border:1px solid var(--control-border);border-radius:.45rem;min-height:44px;padding:.35rem .7rem;cursor:pointer;}
+  .filter-chip[aria-pressed=true] {outline:2px solid currentColor;outline-offset:-4px;}
+  /* Legacy pale surfaces and dark components missed by the original Calm palette. */
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(.phase3-orientation,.map-page,.call-guide,#sheet-preview,.travel-guide,.home-page .location-bar,.site-header .nav-wrap nav,.coffee-info) {background:var(--calm-bg);color:var(--calm-text);}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(.hero-lede,.intro-copy,.roadmap-copy,.awareness-close,.resource-check,.discovery-search-action small,.learning-card-number,.discovery-number,.location-inner p,.finder-title-row > p,.guide-privacy,.guide-examples > span,.back-link,.content-section a,.content-side a,.phase3-place-list small) {color:var(--calm-muted)!important;}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(.phase3-map-sidebar input,.map-filters input,.map-filters select,.geo-controls button,.sheet-tools button,.sheet-remove,.pdf-tools a,.pdf-tools button,.add-zip-button) {background:var(--calm-surface-2);color:var(--calm-text);border-color:var(--calm-border);}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(.phase3-map-sidebar input,.map-filters input)::placeholder {color:var(--calm-muted);}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(.site-header .menu-toggle,.sheet-tray) {background:var(--calm-surface-2);color:var(--calm-text);border-color:var(--calm-border);}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(.content-callout.urgent-reference,.answer-panel.urgent-answer,.discovery-card.is-urgent) {border:2px solid #ff9e91!important;}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(.button,.resource-actions a.primary,.filter-chip[aria-pressed=true],.mini-button:not(.secondary)) :is(strong,span,small) {color:inherit!important;}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(h1 em,.location-context,.topic-help-callout strong,.topic-help-callout a,.browse-all-cta strong) {color:var(--calm-text)!important;}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) .urgent-card:last-child :is(span,strong,p) {color:var(--calm-bg)!important;}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) .ssf-demo-banner {background:#2d3024;color:#fff3cc;border-color:#f2b441;}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) .ssf-demo-banner strong {color:inherit!important;}
+  html[data-ssf-theme=light]:not([data-calm=true]) .ssf-demo-banner {background:#fff1c6;color:#253330;border-color:#80600c;}
+  /* Default low-contrast copy and placeholders: more robust brand-compatible dark shades. */
+  html:not([data-ssf-theme=dark]):not([data-calm=true]) :is(.resource-check,.discovery-search-action small,.discovery-number,.learning-card-number) {color:#506b67;}
+  html:not([data-ssf-theme=dark]):not([data-calm=true]) :is(input,textarea)::placeholder {color:#506b67;opacity:1;}
+  html[data-ssf-contrast=high]:not([data-ssf-theme=dark]):not([data-calm=true]) {--text:#0b2d2b;--text-muted:#17312f;--muted:#17312f;--control-border:#0b2d2b;--line:#506b67;--border:#506b67;}
+  html[data-ssf-contrast=high]:is([data-ssf-theme=dark],[data-calm=true]) {--calm-text:#fff;--calm-muted:#fff;--calm-accent:#ffe08a;--calm-border:#e1e9e4;--control-border:#e1e9e4;}
+  html[data-ssf-contrast=high] :is(input,select,textarea,button,.resource-actions a,.map-panel,.geo-details,.phase3-map-sidebar,.phase3-map-graphic) {border-width:2px;}
+  html[data-ssf-contrast=high] main a:not(.button):not([role=button]) {text-decoration:underline;text-underline-offset:.18em;}
+  html[data-ssf-contrast=high]:not([data-ssf-theme=dark]):not([data-calm=true]) :is(.resource-check,.discovery-search-action small,.brand small,.hero-lede,.intro-copy,.content-lede,.learning-card-number,.discovery-number) {color:#17312f;}
+  html[data-ssf-contrast=high] :is(#home-world-svg,#overview-svg,#us-map-svg,#ga-map-svg) a path,html[data-ssf-contrast=high] #borough-map path {stroke-width:1.4;}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(#home-world-svg,#overview-svg,#us-map-svg,#ga-map-svg) .has-guides path,
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) #borough-map path[aria-pressed=true] {stroke:#071a19;}
+  :is(html[data-ssf-theme=dark],html[data-calm=true]) :is(#home-world-svg,#overview-svg,#us-map-svg,#ga-map-svg) .has-guides:is(:focus-visible,[aria-pressed=true]) path {stroke-width:4;stroke-dasharray:3 2;}
+  /* Use text/list alternatives even when SVG or the user's color palette obscures fills. */
+  @media (forced-colors:active) {
+    :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible {outline:3px solid Highlight!important;box-shadow:none!important;}
+    :is(#home-world-svg,#overview-svg,#us-map-svg,#ga-map-svg) a path,#borough-map path {fill:Canvas!important;stroke:CanvasText!important;forced-color-adjust:none;}
+    :is(#home-world-svg,#overview-svg,#us-map-svg,#ga-map-svg) .has-guides path {fill:Highlight!important;stroke:HighlightText!important;}
+    :is(#home-world-svg,#overview-svg,#us-map-svg,#ga-map-svg) a:is([aria-pressed=true],:focus-visible) path,#borough-map path:is([aria-pressed=true],:focus-visible) {stroke:CanvasText!important;stroke-width:4!important;stroke-dasharray:3 2!important;}
+    .ssf-display :is(select,button,summary),.map-panel,.geo-details {border:1px solid ButtonText;}
+  }
+  html[data-ssf-motion=reduced] *,html[data-ssf-motion=reduced] *::before,html[data-ssf-motion=reduced] *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  html[data-ssf-motion=reduced] {scroll-behavior:auto!important;}
+  html[data-ssf-motion=reduced] :is(.button,.need-card,.learn-topic,.urgent-card):hover {transform:none!important;}
+  @media(prefers-reduced-motion:reduce) {:is(.button,.need-card,.learn-topic,.urgent-card):hover {transform:none!important;}}
+  /* Reflow: no fixed overlays or internally scrolling geographic lists on narrow/large-text screens. */
+  @media(max-width:1100px) {
+    .site-header .nav-wrap .ssf-display {flex:1 1 auto;order:0;}
+    .site-header .nav-wrap .ssf-display:has(details[open]) {flex-basis:100%;}
+    .site-header .nav-wrap .menu-toggle {order:0;}
+    .site-header .nav-wrap nav[data-ssf-nav] {position:static;max-height:none;overflow:visible;box-shadow:none;flex:1 1 100%;}
+  }
+  @media(max-width:640px) {
+    .shell {width:calc(100% - 1.5rem);}
+    .site-header .nav-wrap {align-items:start;gap:.5rem;}
+    .site-header .brand {max-width:100%;flex-basis:100%;}
+    .ssf-display {gap:.4rem;}
+    .ssf-appearance {max-width:100%;}
+    .ssf-pref-panel {padding:.65rem;}
+    .ssf-pref-grid {grid-template-columns:minmax(0,1fr);}
+    .urgent-inner {font-size:.9rem;gap:.3rem;}
+    .phase3-world-grid,.map-layout,.guide-input-wrap,.answer-panel,.content-layout,.learn-grid,.needs-grid,.urgent-cards,.resource-grid,.discovery-grid,.footer-grid {grid-template-columns:minmax(0,1fr)!important;}
+    .need-card p {font-size:1rem;}
+    .phase3-orientation h1,.map-page h1,.content-hero h1 {font-size:clamp(1.75rem,7vw,2.75rem);overflow-wrap:anywhere;}
+    :is(.area-picker,.area-picker-main,.area-picker-controls,.select-shell,.location-inner,.zip-input-row,.guide-input-wrap,.guide-identity,.resource-actions,.sheet-tools,.sheet-settings) {min-width:0;max-width:100%;}
+    :is(.button,.mini-button,.filter-chip,.example-chip,.area-open-button,.answer-panel button,.privacy-pill) {white-space:normal;min-width:0;min-height:44px;overflow-wrap:anywhere;}
+    .sheet-tray {position:static;transform:none;max-width:calc(100% - 1.5rem);width:auto;margin:1rem auto;flex-wrap:wrap;gap:.5rem;}
+    .has-sheet {padding-bottom:0;}
+    .sheet-review-shortcut:not([hidden]) {display:inline-flex;align-items:center;}
+    .phase3-place-list small {text-align:start;}
+    .phase3-map-sidebar input {font-size:max(16px,1rem);}
+  }
+  @media(max-width:1100px) {
+    html:is([data-ssf-text=large],[data-ssf-text=larger]) :is(.phase3-world-grid,.map-layout,.finder-layout,.resource-grid,.discovery-grid,.content-layout,.learn-grid,.needs-grid,.urgent-cards) {grid-template-columns:minmax(0,1fr)!important;}
+    html:is([data-ssf-text=large],[data-ssf-text=larger]) .guide-input-wrap {grid-template-columns:minmax(0,1fr);}
+  }
+  html:is([data-ssf-text=large],[data-ssf-text=larger]) :is(.site-header,.content-side,.sheet-tray) {position:static;}
+  html:is([data-ssf-text=large],[data-ssf-text=larger]) .sheet-tray {transform:none;max-width:calc(100% - 1.5rem);width:auto;margin:1rem auto;flex-wrap:wrap;}
+  html:is([data-ssf-text=large],[data-ssf-text=larger]) .has-sheet {padding-bottom:0;}
+  html:is([data-ssf-text=large],[data-ssf-text=larger]) .sheet-review-shortcut:not([hidden]) {display:inline-flex;align-items:center;}
+  html:is([data-ssf-text=large],[data-ssf-text=larger]) :is(.button,.privacy-pill,.example-chip,.area-open-button) {white-space:normal;min-width:0;}
+}
+@media print {
+  .ssf-display,.sheet-review-shortcut {display:none!important;}
+  html[data-ssf-theme],html[data-ssf-theme] body,html[data-ssf-theme] #sheet-preview {color-scheme:light;background:white!important;color:black!important;}
+  html[data-ssf-theme] :is(#sheet-preview,#trip-checklist,.call-guide) {background:white!important;color:black!important;}
+  html[data-ssf-theme] :is(#sheet-preview,#trip-checklist,.call-guide) :is(p,a,li,span,h1,h2,h3,strong,small) {color:black!important;text-shadow:none!important;}
+}

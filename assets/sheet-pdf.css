@@ -1,0 +1,20 @@
+.pdf-tools { display:grid;gap:.75rem;border:1px solid var(--calm-border,var(--line));padding:clamp(.8rem,3vw,1.4rem);border-radius:1rem;margin:1rem 0 }
+.pdf-tools button,.pdf-tools a { display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.6rem 1rem;border-radius:.6rem;border:1px solid currentColor;background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer }
+.pdf-tools > div:first-of-type { border-top:1px solid var(--calm-border,var(--line));padding-top:1rem }
+.pdf-tools p { margin:.35rem 0 0 }
+#pdf-status:empty { display:none }
+#pdf-result { display:flex;gap:.5rem;flex-wrap:wrap }
+@media print { .pdf-tools {display:none!important} }
+
+.pdf-tools label {display:flex;align-items:center;gap:.5rem;min-height:44px;}
+.pdf-tools label input {width:1.2rem;height:1.2rem;}
+@media print {
+ #sheet-preview,#sheet-preview * {color:#000!important;background-color:#fff!important;box-shadow:none!important;text-shadow:none!important;}
+ #sheet-preview {font:11pt/1.3 Arial,sans-serif!important;}
+ #sheet-preview.sheet-large {font-size:14pt!important;line-height:1.4!important;}
+ #sheet-preview.sheet-large h2 {font-size:18pt!important;}
+ #sheet-preview.sheet-large h1 {font-size:24pt!important;}
+ #sheet-preview a {overflow-wrap:anywhere;}
+ #sheet-preview .sheet-entry {break-inside:avoid;page-break-inside:avoid;}
+ #sheet-preview .sheet-code {background:#fff!important;}
+}

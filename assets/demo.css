@@ -1,0 +1,6 @@
+/* Demo-only identification; not a replacement for accessible shared design tokens. */
+.ssf-demo-banner{background:#fff1c6;color:#253330;border-bottom:2px solid #80600c;
+  padding:.8rem max(1rem,calc((100vw - 73rem)/2));font:500 1rem/1.5 system-ui,sans-serif}
+.ssf-demo-banner strong{font-weight:750}
+@media (prefers-color-scheme:dark){.ssf-demo-banner{background:#2d3024;color:#fff3cc;border-color:#f2b441}}
+@media (forced-colors:active){.ssf-demo-banner{border-bottom:2px solid CanvasText}}

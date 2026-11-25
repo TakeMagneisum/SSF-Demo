@@ -1,0 +1,58 @@
+=== python scripts/phase1-data-baseline.py
+Protected data baseline passed: 201 unchanged files
+exit:0
+=== node scripts/validate-data.js
+Validation failed with 1 issue(s):
+- 404.html: report link or noindex missing
+exit:1
+=== node scripts/validate-explore-map.cjs
+106 exact list routes, 33 unique SVG routes, country filters, search, pointer and keyboard handlers, and missing-geometry fallback passed.
+World landing, lazy geometry, Caribbean → Puerto Rico, uncovered country, Back, and map failure fallbacks passed.
+60 US guides across 29 jurisdictions. All 51 state routes, map coverage, search, ZIP fallback, Back/reset, and missing geometry passed.
+159 Georgia county routes and shapes, crosswalk, Savannah search, ZIP fallback, Back and missing geometry passed.
+exit:0
+=== python validate-guides.py
+{
+  "status": "PASS",
+  "checked_on": "2026-11-18",
+  "guides": 41,
+  "resource_placements": 1181,
+  "distinct_source_pages": 250,
+  "category_coverage_cells": 656,
+  "errors": [],
+  "limitations": "Offline integrity checks only. Source retrieval and content review are recorded separately; local operational review remains pending."
+}
+exit:0
+=== python scripts/validate-demo-links.py --strict-legacy
+66 HTML files; 1098 resolved local references; 0 main-route issues; 0 legacy issues
+exit:0
+=== node scripts/phase2-data.cjs
+Phase 2 record parity: 106 guides, 3487 listings, full fields/order, urgent targets, discovery, geographic crosswalks; 444 catalog places; metadata projection exact.
+exit:0
+=== node scripts/phase2-picker.cjs
+Phase 2 picker: all 106 metadata-only guide routes under project subpath, country filters, neutral initial state, stored choice, failed-index fallback passed (simulated DOM).
+exit:0
+=== python scripts/phase2-http-smoke.py
+HTTP 200 x2: index.html
+HTTP 200 x2: explore-map.html
+HTTP 200 x2: explore-map.html?country=US&state=GA&county=13179
+HTTP 200 x2: explore-map.html?country=GB
+HTTP 200 x2: find-help.html?area=london-enfield
+HTTP 200 x2: find-help.html?area=liberty
+HTTP 200 x2: discover.html?zip=31320
+HTTP 200 x2: 404.html
+HTTP 200 x2: assets/coverage-index.js
+HTTP 200 x2: assets/styles.css
+HTTP 200 x2: assets/explore-map.css
+HTTP 200 x2: assets/maps/georgia-county-boundaries.js
+HTTP 200 x2: assets/maps/london-boundaries.js
+HTTP 200 x2: before-you-call.html
+HTTP 200 x2: before-you-travel.html
+HTTP 200 x2: learn/ai-safety/
+exit:0
+=== python scripts/phase3-nav.py
+Shared navigation: 18 primary pages
+exit:0
+=== node scripts/phase3-postal.cjs
+Existing guide ZIP suggestions: 63 guide groups
+exit:0

@@ -1,0 +1,4 @@
+HTTP 200 and exact asset bytes: find-help.html?area=liberty six script-relative assets
+HTTP 200 and exact asset bytes: find-help/find-help.html?area=london-enfield six script-relative assets
+HTTP 200: privacy policy and isolated reset script
+EXIT:0

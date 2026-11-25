@@ -1,0 +1,2 @@
+Audit wrote output/resource-audit.{json,md}: 0 broken, 1 stale, 0 blocked, 0 warnings.
+EXIT:0

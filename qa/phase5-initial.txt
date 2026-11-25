@@ -1,0 +1,154 @@
+
+$ python scripts/phase1-data-baseline.py
+Protected data baseline passed: 201 unchanged files
+EXIT 0
+
+$ node scripts/validate-data.js
+Validation passed: 106 editions, 3487 edition-listings, 16 directory categories (Omaha pet-listing gap disclosed), 13 discovery topics, accessibility-and-inclusion page, routing integrity, HTTPS links, reviewer sheets, Calm View with pictograms, and 140+ urgent-language cases.
+EXIT 0
+
+$ node scripts/validate-explore-map.cjs
+106 exact list routes, 33 unique SVG routes, country filters, search, pointer and keyboard handlers, and missing-geometry fallback passed.
+World landing, lazy geometry, Caribbean → Puerto Rico, uncovered country, Back, and map failure fallbacks passed.
+60 US guides across 29 jurisdictions. All 51 state routes, map coverage, search, ZIP fallback, Back/reset, and missing geometry passed.
+Phase 3 regional interaction simulation: state/county pointer and focus, select then continue, guide links, existing ZIP suggestions, Atlanta caveat, clear/reset and geometry failure.
+159 Georgia county routes and shapes, crosswalk, Savannah search, ZIP fallback, Back and missing geometry passed.
+EXIT 0
+
+$ python validate-guides.py
+{
+  "status": "PASS",
+  "checked_on": "2026-11-18",
+  "guides": 41,
+  "resource_placements": 1181,
+  "distinct_source_pages": 250,
+  "category_coverage_cells": 656,
+  "errors": [],
+  "limitations": "Offline integrity checks only. Source retrieval and content review are recorded separately; local operational review remains pending."
+}
+EXIT 0
+
+$ python scripts/validate-demo-links.py --strict-legacy
+66 HTML files; 1149 resolved local references; 0 main-route issues; 0 legacy issues
+EXIT 0
+
+$ node scripts/phase2-data.cjs
+Phase 2 record parity: 106 guides, 3487 listings, full fields/order, urgent targets, discovery, geographic crosswalks; 444 catalog places; metadata projection exact.
+EXIT 0
+
+$ node scripts/phase2-picker.cjs
+Phase 2 picker: all 106 metadata-only guide routes under project subpath, country filters, neutral initial state, stored choice, failed-index fallback passed (simulated DOM).
+EXIT 0
+
+$ python scripts/phase2-http-smoke.py
+HTTP 200 x2: index.html
+HTTP 200 x2: explore-map.html
+HTTP 200 x2: explore-map.html?country=US&state=GA&county=13179
+HTTP 200 x2: explore-map.html?country=GB
+HTTP 200 x2: find-help.html?area=london-enfield
+HTTP 200 x2: find-help.html?area=liberty
+HTTP 200 x2: discover.html?zip=31320
+HTTP 200 x2: 404.html
+HTTP 200 x2: assets/coverage-index.js
+HTTP 200 x2: assets/styles.css
+HTTP 200 x2: assets/explore-map.css
+HTTP 200 x2: assets/maps/georgia-county-boundaries.js
+HTTP 200 x2: assets/maps/london-boundaries.js
+HTTP 200 x2: before-you-call.html
+HTTP 200 x2: before-you-travel.html
+HTTP 200 x2: learn/ai-safety/
+EXIT 0
+
+$ python scripts/phase3-nav.py
+Shared navigation: 18 primary pages
+EXIT 0
+
+$ node scripts/phase3-postal.cjs
+Existing guide ZIP suggestions: 63 guide groups
+EXIT 0
+
+$ node scripts/phase3-region-search.cjs
+Existing region search projection: 51 states, 159 GA county names.
+EXIT 0
+
+$ node scripts/phase3-interactions.cjs
+Homepage simulation: existing world shapes, pointer/focus/click/keyboard selection, direct guide links, no-coverage, zoom/reset, search/diacritics/state/county routes, failure fallbacks; no resource bundle.
+Finder simulation: all 106 existing emergency destinations and US referral scopes; missing/invalid explicit guide does not fall back to another jurisdiction.
+404 simulation: direct/nested/dotted repo and root direct recovery; no path/query in email; Calm View preference persists.
+Static global safety scope, no-JS guide fallback, language/Calm hooks, no-heavy-data checks passed.
+Preference simulation: menu open/Escape/focus restore, Calm View setting and language choice/reload/persistence.
+EXIT 0
+
+$ python scripts/phase3-http-smoke.py
+HTTP 200 x2: index.html
+HTTP 200 x2: explore-map.html?country=US&state=GA&county=13179
+HTTP 200 x2: explore-map.html?country=GB
+HTTP 200 x2: discover.html?zip=31320
+HTTP 200 x2: find-help.html?area=liberty
+HTTP 200 x2: assets/phase3.css
+HTTP 200 x2: assets/phase3-home.js
+HTTP 200 x2: assets/phase3-map-ui.js
+HTTP 200 x2: assets/phase3-region-search.js
+HTTP 200 x2: assets/phase3-postal.js
+HTTP 200 x2: assets/phase4.css
+HTTP 200 x2: assets/phase4-preferences.js
+HTTP 200 x2: 404.html
+HTTP 404 custom body (local simulation): missing
+HTTP 404 custom body (local simulation): a/b/c/missing.html
+HTTP 404 custom body (local simulation): a/b/c/
+EXIT 0
+
+$ python scripts/phase4-template.py
+Phase 4 display template: 24 primary/legacy styled pages including standalone 404
+EXIT 0
+
+$ node scripts/phase4-preferences.cjs
+Phase 4 preference DOM simulation: system/light/dark, text/spacing/density, OS contrast/motion/forced-colors, Calm override, reset isolation, invalid input, blocked storage, reload/history, keyboard disclosure/menu and focus, Spanish guide counts. Static print/QR and forced-color CSS checks.
+EXIT 0
+
+$ node scripts/phase4-handout.cjs
+Phase 4 handout simulation: real Liberty resource IDs, selected-card review, original QR encoder/official URL, print-handler call, selection persistence, focus return, clear isolation. No native print/PDF rendering tested.
+EXIT 0
+
+$ python scripts/phase4-contrast.py
+Light body: #17312f / #f4f0e5 = 12.16:1 (target 4.5:1)
+Light muted text: #536b67 / #f4f0e5 = 5.03:1 (target 4.5:1)
+Light muted text on card: #536b67 / #fffdf7 = 5.63:1 (target 4.5:1)
+Dark body: #fbf7ed / #071a19 = 16.77:1 (target 4.5:1)
+Dark raised body: #fbf7ed / #173733 = 12.04:1 (target 4.5:1)
+Dark muted: #d0dcda / #173733 = 9.16:1 (target 4.5:1)
+Dark link: #f2c55c / #173733 = 7.92:1 (target 4.5:1)
+Dark control border: #6e8983 / #173733 = 3.42:1 (target 3:1)
+Light control border: #506b67 / #fffdf7 = 5.67:1 (target 3:1)
+Dark crisis card: #071a19 / #e5b345 = 9.28:1 (target 4.5:1)
+Focus two-color pair: #0b2d2b / #fffdf7 = 14.49:1 (target 3:1)
+Dark covered map outline: #071a19 / #d8aa4d = 8.35:1 (target 3:1)
+Light urgent text: #ffffff / #b9473d = 5.21:1 (target 4.5:1)
+Dark urgent text: #ffffff / #a9473f = 5.74:1 (target 4.5:1)
+Light warning: #0b2d2b / #f2b441 = 7.99:1 (target 4.5:1)
+Light demo notice: #253330 / #fff1c6 = 11.69:1 (target 4.5:1)
+Dark demo notice: #fff3cc / #2d3024 = 12.14:1 (target 4.5:1)
+17 selected opaque token pairs passed. Computed-style/interactive/AT verification remains pending.
+EXIT 0
+
+$ node --check assets/phase4-preferences.js
+EXIT 0
+
+$ node --check assets/handout.js
+EXIT 0
+
+$ node --check assets/phase3-map-ui.js
+EXIT 0
+
+$ node --check assets/phase3-home.js
+EXIT 0
+
+$ node --check assets/explore-map.js
+EXIT 0
+
+$ node --check assets/i18n.js
+EXIT 0
+
+$ node --check assets/calm.js
+EXIT 0
+24/24 passed

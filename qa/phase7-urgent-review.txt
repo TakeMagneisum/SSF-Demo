@@ -1,0 +1,13 @@
+{"synthetic":"I cannot breathe and need groceries","expected":"emergency","observed":"emergency","result":"match"}
+{"synthetic":"I want to die and need rent help","expected":"suicide","observed":"suicide","result":"match"}
+{"synthetic":"domestic violence and a ride","expected":"violence","observed":"violence","result":"match"}
+{"synthetic":"no puedo respirar y comida","expected":"emergency","observed":"emergency","result":"match"}
+{"synthetic":"groceries and rent","expected":"ordinary","observed":"ordinary","result":"match"}
+{"synthetic":"I feel unsafe at home","expected":"violence","observed":"violence","result":"match"}
+{"synthetic":"I do not have chest pain","expected":"ordinary","observed":"emergency","result":"OPEN safety review"}
+{"synthetic":"suicide prevention training","expected":"ordinary","observed":"suicide","result":"OPEN safety review"}
+{"synthetic":"my baby stopped breathing","expected":"emergency","observed":"ordinary","result":"OPEN safety review"}
+{"synthetic":"my friend is choking","expected":"emergency","observed":"ordinary","result":"OPEN safety review"}
+{"synthetic":"I am having a stroke","expected":"emergency","observed":"ordinary","result":"OPEN safety review"}
+6/11 independent probes matched; 5 open classification discrepancies. No source/target edits. This is NOT a medical triage classifier or a population accuracy study.
+EXIT:2

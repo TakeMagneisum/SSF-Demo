@@ -1,0 +1,94 @@
+(function () {
+  "use strict";
+
+  const form = document.querySelector("#suggestion-form");
+  const result = document.querySelector("#suggestion-result");
+  if (!form || !result) return;
+
+  function suggestionText() {
+    const value = (name) => String(document.getElementById(name)?.value || "").trim() || "Not provided";
+    return [
+      "SINGLE STEP FORWARD — RESOURCE SUGGESTION",
+      "",
+      "Local edition: " + (window.SSF_CURRENT_AREA?.label || "Not selected"),
+      "Organization or resource: " + value("resource-name"),
+      "Topic: " + value("resource-category"),
+      "Area served: " + value("resource-area"),
+      "Official website or phone: " + value("resource-url"),
+      "",
+      "What someone should know:",
+      value("resource-note"),
+      "",
+      "Prepared locally from the Single Step Forward prototype.",
+      "This note contains no information unless the visitor entered it."
+    ].join("\n");
+  }
+
+  async function copyText(text, button) {
+    try {
+      await navigator.clipboard.writeText(text);
+      button.textContent = "Copied";
+    } catch {
+      const helper = document.createElement("textarea");
+      helper.value = text;
+      helper.setAttribute("readonly", "");
+      helper.style.position = "fixed";
+      helper.style.opacity = "0";
+      document.body.append(helper);
+      helper.select();
+      let copied=false;
+      try {copied=document.execCommand("copy");} catch {}
+      helper.remove();
+      button.textContent = copied ? "Copied" : "Copy unavailable — use the selectable note";
+    }
+  }
+
+  function downloadText(text) {
+    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "single-step-forward-resource-suggestion.txt";
+    document.body.append(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const text = suggestionText();
+    result.replaceChildren();
+    result.hidden = false;
+
+    const message = document.createElement("p");
+    message.textContent = "Your note is ready on this device. Review it, then choose Open email app to send it to feedback@singlestepforward.com, or copy/download it. Nothing was sent automatically.";
+
+    const actions = document.createElement("div");
+    actions.className = "result-actions";
+
+    const copyButton = document.createElement("button");
+    copyButton.type = "button";
+    copyButton.className = "mini-button";
+    copyButton.textContent = "Copy note";
+    copyButton.addEventListener("click", () => copyText(text, copyButton));
+
+    const downloadButton = document.createElement("button");
+    downloadButton.type = "button";
+    downloadButton.className = "mini-button secondary";
+    downloadButton.textContent = "Download .txt";
+    downloadButton.addEventListener("click", () => downloadText(text));
+
+    const mailLink = document.createElement("a");
+    mailLink.className = "mini-button";
+    mailLink.textContent = "Open email app";
+    mailLink.href = "mailto:feedback@singlestepforward.com?subject=" + encodeURIComponent("SSF resource suggestion") + "&body=" + encodeURIComponent(text);
+    actions.append(mailLink, copyButton, downloadButton);
+    const note = document.createElement("pre");
+    note.style.whiteSpace = "pre-wrap";
+    note.style.overflowWrap = "anywhere";
+    note.textContent = text;
+    result.append(message, note, actions);
+  });
+  form.querySelector('button[type="submit"]').disabled = false;
+})();

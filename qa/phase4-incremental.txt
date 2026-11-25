@@ -1,0 +1,94 @@
+$ python scripts/phase1-data-baseline.py
+Protected data baseline passed: 201 unchanged files
+EXIT 0
+$ node scripts/validate-data.js
+Validation passed: 106 editions, 3487 edition-listings, 16 directory categories (Omaha pet-listing gap disclosed), 13 discovery topics, accessibility-and-inclusion page, routing integrity, HTTPS links, reviewer sheets, Calm View with pictograms, and 140+ urgent-language cases.
+EXIT 0
+$ node scripts/validate-explore-map.cjs
+assets/phase4-preferences.js:18
+    root.dataset.ssfTheme=effective;
+                         ^
+
+TypeError: Cannot set properties of undefined (setting 'ssfTheme')
+    at apply (assets/phase4-preferences.js:18:26)
+    at assets/phase4-preferences.js:50:3
+    at assets/phase4-preferences.js:56:3
+    at Script.runInContext (node:vm:149:12)
+    at Object.runInContext (node:vm:301:6)
+    at load (/tmp/ssf4/single-step-forward-2-phase-3/scripts/validate-explore-map.cjs:32:26)
+    at run (/tmp/ssf4/single-step-forward-2-phase-3/scripts/validate-explore-map.cjs:33:84)
+    at /tmp/ssf4/single-step-forward-2-phase-3/scripts/validate-explore-map.cjs:39:23
+    at Object.<anonymous> (/tmp/ssf4/single-step-forward-2-phase-3/scripts/validate-explore-map.cjs:231:3)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+EXIT 1
+$ python validate-guides.py
+{
+  "status": "PASS",
+  "checked_on": "2026-11-18",
+  "guides": 41,
+  "resource_placements": 1181,
+  "distinct_source_pages": 250,
+  "category_coverage_cells": 656,
+  "errors": [],
+  "limitations": "Offline integrity checks only. Source retrieval and content review are recorded separately; local operational review remains pending."
+}
+EXIT 0
+$ python scripts/validate-demo-links.py --strict-legacy
+66 HTML files; 1149 resolved local references; 0 main-route issues; 0 legacy issues
+EXIT 0
+$ node scripts/phase2-data.cjs
+Phase 2 record parity: 106 guides, 3487 listings, full fields/order, urgent targets, discovery, geographic crosswalks; 444 catalog places; metadata projection exact.
+EXIT 0
+$ node scripts/phase2-picker.cjs
+Phase 2 picker: all 106 metadata-only guide routes under project subpath, country filters, neutral initial state, stored choice, failed-index fallback passed (simulated DOM).
+EXIT 0
+$ python scripts/phase2-http-smoke.py
+HTTP 200 x2: index.html
+HTTP 200 x2: explore-map.html
+HTTP 200 x2: explore-map.html?country=US&state=GA&county=13179
+HTTP 200 x2: explore-map.html?country=GB
+HTTP 200 x2: find-help.html?area=london-enfield
+HTTP 200 x2: find-help.html?area=liberty
+HTTP 200 x2: discover.html?zip=31320
+HTTP 200 x2: 404.html
+HTTP 200 x2: assets/coverage-index.js
+HTTP 200 x2: assets/styles.css
+HTTP 200 x2: assets/explore-map.css
+HTTP 200 x2: assets/maps/georgia-county-boundaries.js
+HTTP 200 x2: assets/maps/london-boundaries.js
+HTTP 200 x2: before-you-call.html
+HTTP 200 x2: before-you-travel.html
+HTTP 200 x2: learn/ai-safety/
+EXIT 0
+$ python scripts/phase3-nav.py
+Shared navigation: 18 primary pages
+EXIT 0
+$ node scripts/phase3-postal.cjs
+Existing guide ZIP suggestions: 63 guide groups
+EXIT 0
+$ node scripts/phase3-region-search.cjs
+Existing region search projection: 51 states, 159 GA county names.
+EXIT 0
+$ node scripts/phase3-interactions.cjs
+Homepage simulation: existing world shapes, pointer/focus/click/keyboard selection, direct guide links, no-coverage, zoom/reset, search/diacritics/state/county routes, failure fallbacks; no resource bundle.
+Finder simulation: all 106 existing emergency destinations and US referral scopes; missing/invalid explicit guide does not fall back to another jurisdiction.
+404 simulation: direct/nested/dotted repo and root direct recovery; no path/query in email; Calm View preference persists.
+Static global safety scope, no-JS guide fallback, language/Calm hooks, no-heavy-data checks passed.
+Preference simulation: menu open/Escape/focus restore, Calm View setting and language choice/reload/persistence.
+EXIT 0
+$ python scripts/phase3-http-smoke.py
+HTTP 200 x2: index.html
+HTTP 200 x2: explore-map.html?country=US&state=GA&county=13179
+HTTP 200 x2: explore-map.html?country=GB
+HTTP 200 x2: discover.html?zip=31320
+HTTP 200 x2: find-help.html?area=liberty
+HTTP 200 x2: assets/phase3.css
+HTTP 200 x2: assets/phase3-home.js
+HTTP 200 x2: assets/phase3-map-ui.js
+HTTP 200 x2: assets/phase3-region-search.js
+HTTP 200 x2: assets/phase3-postal.js
+HTTP 200 x2: 404.html
+HTTP 404 custom body (local simulation): missing
+HTTP 404 custom body (local simulation): a/b/c/missing.html
+HTTP 404 custom body (local simulation): a/b/c/
+EXIT 0

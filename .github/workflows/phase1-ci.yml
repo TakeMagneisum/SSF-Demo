@@ -1,0 +1,84 @@
+name: Demo Phase 7 baseline and offline QA
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Immutable protected-data baseline
+        run: python scripts/phase1-data-baseline.py
+      - name: Local data integrity and safe routing
+        run: node scripts/validate-data.js
+      - name: Map navigation regression
+        run: node scripts/validate-explore-map.cjs
+      - name: Independent research ledger validation
+        run: python validate-guides.py
+      - name: Static demo links and noindex
+        run: python scripts/validate-demo-links.py --strict-legacy
+      - name: Record parity and generated coverage freshness
+        run: node scripts/phase2-data.cjs
+      - name: Lightweight guide picker simulation
+        run: node scripts/phase2-picker.cjs
+      - name: Local project-subpath HTTP smoke
+        run: python scripts/phase2-http-smoke.py
+      - name: Shared static navigation freshness
+        run: python scripts/phase3-nav.py
+      - name: Derived postal suggestions and place search freshness
+        run: |
+          node scripts/phase3-postal.cjs
+          node scripts/phase3-region-search.cjs
+      - name: Homepage and safety interaction simulation
+        run: node scripts/phase3-interactions.cjs
+      - name: Phase 3 nested project-path HTTP simulation
+        run: python scripts/phase3-http-smoke.py
+      - name: Shared display template, preference state and contrast tokens
+        run: |
+          python scripts/phase4-template.py
+          node scripts/phase4-preferences.cjs
+          node scripts/phase4-handout.cjs
+          python scripts/phase4-contrast.py
+          node --check assets/phase4-preferences.js
+          node --check assets/handout.js
+          node --check assets/phase3-map-ui.js
+          node --check assets/phase3-home.js
+          node --check assets/explore-map.js
+          node --check assets/i18n.js
+          node --check assets/calm.js
+      - name: Phase 5 deterministic finder and preparation
+        run: |
+          node --check assets/guide.js
+          node --check assets/phase5-vocabulary.js
+          node --check assets/phase5-prep.js
+          node scripts/phase5-finder.cjs
+          node scripts/phase5-prep.cjs
+          python scripts/phase5-http-smoke.py
+      - name: Phase 6 print, local privacy and optional asset lifecycle
+        run: |
+          node --check assets/sheet-pdf.js
+          node --check assets/phase6-privacy.js
+          node --check assets/site.js
+          node scripts/phase6-pdf.cjs
+          node scripts/phase6-controller.cjs
+          node scripts/phase6-privacy.cjs
+          node scripts/phase6-handout.cjs
+          python scripts/phase6-http-smoke.py
+      - name: Phase 7 independent regression guards
+        run: |
+          python scripts/phase7-legacy.py
+          python scripts/phase7-http.py
+          node --check assets/discovery.js
+          node scripts/phase7-share.cjs
+          python scripts/phase7-source.py
+      # The separately runnable phase7-urgent-review.cjs is a known failed release gate
+      # (exit 2), not a regression test to mark green. No deployment workflow is enabled.

@@ -1,0 +1,18 @@
+$ node scripts/phase6-pdf.cjs /tmp/ssf7-final-pdf
+All 3,487 original placements have font coverage for the sheet fields.
+{
+  international: 'santiago',
+  longest: 'long-beach',
+  urgent: 'liberty',
+  extra: 'london-enfield',
+  countries: [ 'US', 'CL', 'PR', 'GB', 'NZ' ]
+}
+single 1 pages 83450 bytes 1 link annotations liberty/ga-211
+large 5 pages 118834 bytes 17 link annotations santiago/ventanilla-unica-social, long-beach/long-beach-senior-center, liberty/988-lifeline, london-enfield/london-enfield-001, london-enfield/london-enfield-002, london-enfield/london-enfield-003, london-enfield/london-enfield-004, london-enfield/london-enfield-005, london-enfield/london-enfield-006, london-enfield/london-enfield-007, london-enfield/london-enfield-008, london-enfield/london-enfield-009, london-enfield/london-enfield-010
+Empty PDF rejected.
+EXIT:0
+$ python scripts/phase6-render-check.py /tmp/ssf7-final-pdf
+single: 1 rendered pages, 1 QR targets decoded exactly; source field text and bounds passed
+large: 5 rendered pages, 14 QR targets decoded exactly; source field text and bounds passed
+15 QR symbols decoded across actual generated PDFs; no native print/device scan claim.
+EXIT:0

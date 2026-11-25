@@ -1,0 +1,810 @@
+{
+  "schema": 1,
+  "purpose": "Phase 1 immutable reference for protected datasets, provenance and brand assets",
+  "files": {
+    "assets/brand-mark.svg": {
+      "sha256": "d8423b7329d3885076b8b912156019471c5e9b1a4dd91a706128738f94393e66",
+      "bytes": 721
+    },
+    "assets/city-resources.js": {
+      "sha256": "165827d48a0bdf55d58b3d5952ab2a96143fe25d68c3a5137c1e9fbf027b7876",
+      "bytes": 2134928
+    },
+    "assets/colorado-resources.js": {
+      "sha256": "07e6866fddc87dc96520d96a181dc038f0c7c34ac74ecb74c02a5c1044405b07",
+      "bytes": 44515
+    },
+    "assets/dawn-full.png": {
+      "sha256": "bb627ed9a53f57f0c239c8a9f8a64da682071e439c7ee4695ed431283cf610b1",
+      "bytes": 139005
+    },
+    "assets/dawn-full.webp": {
+      "sha256": "0b81ce39e1b54ee11855acffe19e76c0c0f63cb43d13c43639bbb21011b05d6c",
+      "bytes": 5430
+    },
+    "assets/dawn-guide.png": {
+      "sha256": "309f616add7784c43bb985e1fbc5452be6c0dd60ab8bfdac5e454b5075f200b2",
+      "bytes": 134001
+    },
+    "assets/dawn-portait.png": {
+      "sha256": "e0d549627dfadd9c42415d5668d1074d8f50268b325454e5ba24b73bce90b164",
+      "bytes": 85640
+    },
+    "assets/dawn-portait.webp": {
+      "sha256": "98f9322ac5e0471140c1df7e7d9904bc18215db62efa3a7c0b6295260cb48560",
+      "bytes": 3414
+    },
+    "assets/discovery-data.js": {
+      "sha256": "ab774a4d44a49612a914b037f17d0751dbc25c3934c8b55d4b1ce6db29e0e528",
+      "bytes": 34646
+    },
+    "assets/expanded-editions.js": {
+      "sha256": "9db56b2395830505bcb00e43e87ce4d97b5e6585732604f2aa1b8bee262d1826",
+      "bytes": 901327
+    },
+    "assets/favicon.svg": {
+      "sha256": "a509b60699f24f152e8ecee0a7e956d0cea93f08dbb2f8ccac2c795fd8afaece",
+      "bytes": 540
+    },
+    "assets/icon-call-211.webp": {
+      "sha256": "9483386718ed863706d2f6fec80da03ccbc568a0815f384b41210665f6eb2ee0",
+      "bytes": 8666
+    },
+    "assets/icon-confirm-directly.webp": {
+      "sha256": "46463622e6879923376b5f6f9dd2531b5baa5d6319ae904f3e147ed7a6a709bc",
+      "bytes": 7982
+    },
+    "assets/icon-dental-health.webp": {
+      "sha256": "43cf1400ecbda015ffbeb7e3fec71d8818e14923721ec4fbfdcd90774b4f04ec",
+      "bytes": 7584
+    },
+    "assets/icon-family-support.webp": {
+      "sha256": "ca82e9c616b29d580c6c5bcf0eddd8e0da92cf4be38c85a96911efebb0a75376",
+      "bytes": 10338
+    },
+    "assets/icon-food.webp": {
+      "sha256": "c7e6e4787d1c66494fa1a31330201a0202ed9fd32155e4c626eb770a33c23ce4",
+      "bytes": 8218
+    },
+    "assets/icon-household-bills.webp": {
+      "sha256": "e887f3030235c61d07e32c5a4d0e0c53f1eecad9784fb810b7873b5073d88567",
+      "bytes": 8208
+    },
+    "assets/icon-housing.webp": {
+      "sha256": "4b3d09d8a4102e80b27926cb9aba15608f7a52ff6968069295ff9a19ecea56ac",
+      "bytes": 8710
+    },
+    "assets/icon-legal-consumer.webp": {
+      "sha256": "1e8146c482a74536146c05b17963c644b4352f40a18f130321ae52bd9a8f0224",
+      "bytes": 8768
+    },
+    "assets/icon-medical-costs.webp": {
+      "sha256": "7b7f64bba48dadc3fdc0429f3652607de4ffef5263457d6545b0e2f486c77249",
+      "bytes": 7576
+    },
+    "assets/icon-mental-health.webp": {
+      "sha256": "ec81cc413ca7701247a313775b85c532df5f4bf582479526ebb297cf64bd8edf",
+      "bytes": 8770
+    },
+    "assets/icon-official-source.webp": {
+      "sha256": "e907b0955ea7279f59717bd5437ae1e46516a3c42dc581fbd399e510000296c3",
+      "bytes": 8536
+    },
+    "assets/icon-pet-assistance.webp": {
+      "sha256": "bda106ab63c2a166451f58a7694472232c3f7f96de951ca4ee757b4382a2ba5c",
+      "bytes": 10398
+    },
+    "assets/icon-prepared-search.webp": {
+      "sha256": "567fc09f66bda222dfc7334b3f55456bcd06f9305d3e5f5af048fbabe043a18a",
+      "bytes": 8916
+    },
+    "assets/icon-private-device.webp": {
+      "sha256": "0c90f88fd67fd205033859f614a90229e39d133920d25f837d15641b65ce91a4",
+      "bytes": 7118
+    },
+    "assets/icon-reviewed-guide.webp": {
+      "sha256": "e6d1c91c97239d247b07cc530cfbff2d250e0a6ff6e8b313d01b22fc4211cf47",
+      "bytes": 8138
+    },
+    "assets/icon-safety-support.webp": {
+      "sha256": "4e1c5e448719d89d696ebb24cb838ca5a44dac4671b85be3d8d2b8a08b630420",
+      "bytes": 8762
+    },
+    "assets/icon-share-knowledge.webp": {
+      "sha256": "c1a562497ca1e9a5d75cd767d4748dd4a57055abb0abb27eae6d92dc3003cc11",
+      "bytes": 8238
+    },
+    "assets/icon-transportation.webp": {
+      "sha256": "dfa934c7486e7fe8e793b1139e3183c1c71d077f5e5c7627a3c0b6bce685f60d",
+      "bytes": 9122
+    },
+    "assets/icon-use-zip.webp": {
+      "sha256": "fe4cb7e7582be3d26e101fa016e280e835477afdd1db70253cc3435d4a71c87e",
+      "bytes": 7954
+    },
+    "assets/icon-work-learning.webp": {
+      "sha256": "155255625abf0ba91f3c9f56467f4f32d7f2bf14e7d3f96d36cafb9d8ef5e4c3",
+      "bytes": 10016
+    },
+    "assets/illinois-resources.js": {
+      "sha256": "0cca2ab99e38436607e361238e49cf12a33ef8015e0213c9f41b3c11ce6da096",
+      "bytes": 31375
+    },
+    "assets/maps/GA-COUNTY-SOURCE.md": {
+      "sha256": "991845bd1639f47aef1d35f3bf75b704f1ee2d7e5f31eaffdc959ac72b0087ab",
+      "bytes": 1377
+    },
+    "assets/maps/LONDON-SOURCE.md": {
+      "sha256": "62d329f9d73e0cf75a53e94f046e8bc514ec23ec57784551618e8b5a24f652bc",
+      "bytes": 1365
+    },
+    "assets/maps/OVERVIEW-SOURCE.md": {
+      "sha256": "c8e9df1d633941dfe43da06393d6da5600f7467af4f9cf3c21a401596987382b",
+      "bytes": 1262
+    },
+    "assets/maps/US-STATE-SOURCE.md": {
+      "sha256": "ba1c04112e3b6af980c7d2aecc01cc735b5676ec529b41eb291807639d7ec4c1",
+      "bytes": 856
+    },
+    "assets/maps/caribbean-overview.js": {
+      "sha256": "8be6a473395c2b91350eb2e01f6e049880ec4fe58417fa16a46338f4b37e019b",
+      "bytes": 31909
+    },
+    "assets/maps/georgia-county-boundaries.js": {
+      "sha256": "0383535f727dc0a6c02edcfcf2d03463e0c32f3b3cf05b7b37ad3fe33c3b848f",
+      "bytes": 101457
+    },
+    "assets/maps/georgia-county-names.js": {
+      "sha256": "14cba68c122fa3afcf66c713e53fc2ae8f095213700a75bf132d76ac54e0be5d",
+      "bytes": 4014
+    },
+    "assets/maps/london-boundaries.js": {
+      "sha256": "a9ef0989d917bdd326b9e0515e1427c0baf9fd07869e7008541122994c6320c9",
+      "bytes": 44312
+    },
+    "assets/maps/us-state-boundaries.js": {
+      "sha256": "fd965e1b0e6313f910ca41f8bdd1798f4115dd6cd8982d758ed28804612259c3",
+      "bytes": 160067
+    },
+    "assets/maps/world-overview.js": {
+      "sha256": "782a7438832d8b9a0ac6468645a44dfe3e6cd4dd2767446d1f244dbbc15f6b73",
+      "bytes": 121199
+    },
+    "assets/massachusetts-resources.js": {
+      "sha256": "269bbf254208f38ca6c58d22f90a08e6552d4afe1b064058f3acbf2cafcb907e",
+      "bytes": 25935
+    },
+    "assets/new-york-resources.js": {
+      "sha256": "ab650c70abf19d556c716382e24391c75470e4ba9d12a40c7d0791ac63dd250f",
+      "bytes": 47160
+    },
+    "assets/resources.js": {
+      "sha256": "f42a2cfb9f02d0870a57a45814c6a68d9b2baeee35914a4fd29f52703ca8f481",
+      "bytes": 138339
+    },
+    "assets/support-the-project-large.webp": {
+      "sha256": "c667d6e56b06da38c7dadede499525d9b6d5cca6c5813e35bcc1a8bd5de90318",
+      "bytes": 17014
+    },
+    "assets/support-the-project-small.webp": {
+      "sha256": "7d7c8aa3de101289b388581127339ff2c93fd6c7d7036afb9a5568f5da74c857",
+      "bytes": 7178
+    },
+    "location-index.csv": {
+      "sha256": "05c9b448af2fb093a707725980a712dc2302cae4c40932ad6522975e5b91540b",
+      "bytes": 7168
+    },
+    "location-plan.json": {
+      "sha256": "1ea74d95624e441030d52d7a1054a707f7f0e88f59137a2645f8509a4ae09473",
+      "bytes": 34727
+    },
+    "research-checklist.csv": {
+      "sha256": "5f99c91d0430bfc0632edee1928e6658661b7b998d810a497e95ae16a161d9e5",
+      "bytes": 209029
+    },
+    "research-ledger.json": {
+      "sha256": "e65e1dd048eeb47c5829229e85e979b1d682d8b65bba9d6b52475c2c79444f2d",
+      "bytes": 799733
+    },
+    "review-sheets/albuquerque-review.csv": {
+      "sha256": "929c2cadfbbdc63b8e33cbd0f556ec3ed1678a3e4b447a4545bec046a9340be5",
+      "bytes": 10400
+    },
+    "review-sheets/atlanta-review.csv": {
+      "sha256": "37feb3ef76966fae159cb530c76ff55965a29506a6395b2c42f79595013b0dc1",
+      "bytes": 10270
+    },
+    "review-sheets/austin-review.csv": {
+      "sha256": "cc15dcc422bca54ef2f7e3d11bdfe4ca83e31d6f80d7f81cc06b32ff752ae32e",
+      "bytes": 10092
+    },
+    "review-sheets/baltimore-review.csv": {
+      "sha256": "b7b60c7b0b2fd5c692daa2597762568bf7ec5a0e16ab37e98c8b97f55824f878",
+      "bytes": 10564
+    },
+    "review-sheets/bayamon-pr-review.csv": {
+      "sha256": "3a45058314e972c5159c0cc830e5489deef1452aa69d590ea18a7606d69bcd4c",
+      "bytes": 9893
+    },
+    "review-sheets/boston-review.csv": {
+      "sha256": "1bfd2abb52a2f16cb35d074a43e3fda7258ca5d7ff09e56412b24478a33c33e9",
+      "bytes": 10383
+    },
+    "review-sheets/carmel-review.csv": {
+      "sha256": "89c1917789ace134939eca44d5b81779a4cbd253e339b77915bc3d7dd2e52280",
+      "bytes": 10560
+    },
+    "review-sheets/carolina-pr-review.csv": {
+      "sha256": "251dd4407a0f675cc7f20f3241c5e4efceb5b87501ac8bd04ff8c246c0876b15",
+      "bytes": 9766
+    },
+    "review-sheets/charlotte-review.csv": {
+      "sha256": "4c642f19fe28630f432ab3439a03f3fb29371b6feeae2393d405eb9bce2d4a3d",
+      "bytes": 10405
+    },
+    "review-sheets/chicago-review.csv": {
+      "sha256": "a825fae840bcb1c94b9367655b9fece645d75a252037d19fbea849aa22dad995",
+      "bytes": 9109
+    },
+    "review-sheets/columbus-review.csv": {
+      "sha256": "92c682c74291ab4faa6930e708006bfa19affa0820e651174433e7bad3b101c7",
+      "bytes": 10098
+    },
+    "review-sheets/dallas-review.csv": {
+      "sha256": "5e5da5935f98ba4ff6a17209f82097dc36ab42364e2a129c2d3fbebe72fc3883",
+      "bytes": 8080
+    },
+    "review-sheets/denver-review.csv": {
+      "sha256": "4066c7bf93b010c5cab9bd45512806e6ad764359d8a4a5e71ecfaaa14fe7d118",
+      "bytes": 8977
+    },
+    "review-sheets/detroit-review.csv": {
+      "sha256": "63cc9c6007f25156e50189ac8bb3109d4f4df7b8ce9ae01e6f701f1d5a3b1dc5",
+      "bytes": 10614
+    },
+    "review-sheets/elpaso-review.csv": {
+      "sha256": "807597939ae4c535396b286855859e39e55b94377b3ebecdf12995419c4602fb",
+      "bytes": 9515
+    },
+    "review-sheets/erie-review.csv": {
+      "sha256": "5ae13287ead679fa5f0916b23df44f64232331f5b078da38e0f19e02e73b0064",
+      "bytes": 9296
+    },
+    "review-sheets/fort-worth-review.csv": {
+      "sha256": "243396336c8c48332a15a3319fcd2d3d11368e9e46c7b919acf3b43841ac52b2",
+      "bytes": 10884
+    },
+    "review-sheets/fresno-review.csv": {
+      "sha256": "2fe0b1478d99cf2c641316fce0a28f4ddc339879037c9e7a7bc2efa64083c77b",
+      "bytes": 10078
+    },
+    "review-sheets/greater-concepcion-review.csv": {
+      "sha256": "1f97dd8b89f82ced6092d802add404c71cc4c860c474e8a50c95484970f17634",
+      "bytes": 9207
+    },
+    "review-sheets/greater-valparaiso-review.csv": {
+      "sha256": "eea09a588773683ba3b0d003d7bedd152e01819b6db4bd8539993fb61544817f",
+      "bytes": 9164
+    },
+    "review-sheets/houston-review.csv": {
+      "sha256": "b63e5fe4797f1e88234896aa23da8f55b71158611bae40d8f6992d08a29b63ef",
+      "bytes": 10042
+    },
+    "review-sheets/indian-harbour-beach-review.csv": {
+      "sha256": "78a55a30284b996c5eca10e5b763cb83a464b4ba51b8542769eedc477eb4fed3",
+      "bytes": 10596
+    },
+    "review-sheets/indianapolis-review.csv": {
+      "sha256": "a2c2dea76cfb77cbb283302e3e165155021fa9aa53abbcd367ae2ae5ce229872",
+      "bytes": 10318
+    },
+    "review-sheets/jacksonville-review.csv": {
+      "sha256": "805104c65c35a482cf5ec432295f2bb8e0a2dd00c14b9afa8b4e08d5f22f00a1",
+      "bytes": 11073
+    },
+    "review-sheets/kansas-city-review.csv": {
+      "sha256": "d6e0bf99d91abe44f8f6bee7cacd723881d7109c0540eda369d50021e87ffc4e",
+      "bytes": 9559
+    },
+    "review-sheets/las-vegas-review.csv": {
+      "sha256": "80478bcc84b39eccd8fbb1f773b7f60046c76d10066c511c11c4dc0c1ce33bc6",
+      "bytes": 10590
+    },
+    "review-sheets/lewis-and-clark-county-review.csv": {
+      "sha256": "0de11514b970acc7425159d2db92a439500a947548e097a2c307864dc7126398",
+      "bytes": 11489
+    },
+    "review-sheets/liberty-review.csv": {
+      "sha256": "f34b385867e6f3be5b39f84ae584e1012dcd64a622676b2d79fbc419944fd244",
+      "bytes": 10174
+    },
+    "review-sheets/locations.json": {
+      "sha256": "c3861f1323b98b471e56c1d5aa2de77b6bf669b3f4743cbb4476ac59a1445dd1",
+      "bytes": 50469
+    },
+    "review-sheets/london-barking-and-dagenham-review.csv": {
+      "sha256": "6306cb6f66a288866b4fd48253cfee30a46e8591a0a8a4d4efa8c2be268a8743",
+      "bytes": 7591
+    },
+    "review-sheets/london-barnet-review.csv": {
+      "sha256": "94178644d8d623ab8819f14bb6b6d5aab0286409470a5dda2ec7164dca6a12fa",
+      "bytes": 7890
+    },
+    "review-sheets/london-bexley-review.csv": {
+      "sha256": "8d92f47a3e88913c53b85979e7b4f2f71ed5b910c3a3d011a74cfa9529d78ef5",
+      "bytes": 7885
+    },
+    "review-sheets/london-brent-review.csv": {
+      "sha256": "ed7ed2d1644c0da1c3bf5158aa453a56f665ecdfa534a7a46414d3ca42a04899",
+      "bytes": 8412
+    },
+    "review-sheets/london-bromley-review.csv": {
+      "sha256": "c008bfed4980c41c4bf6bd45fa46f0fdd2277d6f83328b6eccea70516d9f0f1f",
+      "bytes": 8438
+    },
+    "review-sheets/london-camden-review.csv": {
+      "sha256": "b23b9f980a21fd65938d62602737db252600fcf7e323234fa0e340295d9a9001",
+      "bytes": 8131
+    },
+    "review-sheets/london-city-of-london-review.csv": {
+      "sha256": "2a089fcab547b3d2c01d49422d0cdc24ca2b86ae64da073c5d1b927cbb15c622",
+      "bytes": 8058
+    },
+    "review-sheets/london-croydon-review.csv": {
+      "sha256": "702fe41614d8dc63127f788eed1ad27d99185d2e9f8922d751698db330c5ee40",
+      "bytes": 8229
+    },
+    "review-sheets/london-ealing-review.csv": {
+      "sha256": "fe667de4eab07d07133ddd5552387fccf253ffa63929f79d30c5a72d306f8bca",
+      "bytes": 8172
+    },
+    "review-sheets/london-enfield-review.csv": {
+      "sha256": "124433af2d644717b690868e876324e286ae524919038adb015c97b713ba8009",
+      "bytes": 8231
+    },
+    "review-sheets/london-greenwich-review.csv": {
+      "sha256": "f0f32cccd2aa04408796a51d20044d4c7fe73e557f316a33da525f1e91575d0d",
+      "bytes": 7876
+    },
+    "review-sheets/london-hackney-review.csv": {
+      "sha256": "bf83d0c118af202849375b82a5d9910c63e19a4b932003c36ffc64d08b1fed40",
+      "bytes": 7835
+    },
+    "review-sheets/london-hammersmith-and-fulham-review.csv": {
+      "sha256": "75afe3adfe2a3c90523aa89e33dd6d70a95e23a95244529bab7f665586519b5e",
+      "bytes": 7963
+    },
+    "review-sheets/london-haringey-review.csv": {
+      "sha256": "89f205463c5d806fbc8659690fca8d9fac30ef4a0424297ac42c8f3afcd73669",
+      "bytes": 8129
+    },
+    "review-sheets/london-harrow-review.csv": {
+      "sha256": "5c25f4c2d8c91e36c07f1b81cce1a685b94368be08c19585ac37ef1a46a46919",
+      "bytes": 7820
+    },
+    "review-sheets/london-havering-review.csv": {
+      "sha256": "fa7f364882b31ef49e9d9477fcc17931c40b4230f96fc758e2c379789615c7b9",
+      "bytes": 8491
+    },
+    "review-sheets/london-hillingdon-review.csv": {
+      "sha256": "876cb7863392d7c7fae717f73a98ef9f30937b2b6a35d1c5d4093feb572b75a2",
+      "bytes": 8130
+    },
+    "review-sheets/london-hounslow-review.csv": {
+      "sha256": "09667663ae4bbe8c5d2d53b963f820f4006d99fa319ad52b6b17e34a322cd227",
+      "bytes": 8471
+    },
+    "review-sheets/london-islington-review.csv": {
+      "sha256": "e7292ef7b4c499e407501e0384207de47480f940cc655cffba6eb2c6af63c235",
+      "bytes": 7870
+    },
+    "review-sheets/london-kensington-and-chelsea-review.csv": {
+      "sha256": "28ea9444c6dcd76f32a6852278069ea2b341e4a572d85ffd94f6ded2c159ce41",
+      "bytes": 8341
+    },
+    "review-sheets/london-kingston-upon-thames-review.csv": {
+      "sha256": "97280708d433c4de7986290710c7c92f3d5d9ff401d94a7ba27c9f19d1fd72d3",
+      "bytes": 8023
+    },
+    "review-sheets/london-lambeth-review.csv": {
+      "sha256": "304dc76823a31db8e4850c61aad28daf3d3afd27db60bbb3c355afe7026e929f",
+      "bytes": 7491
+    },
+    "review-sheets/london-lewisham-review.csv": {
+      "sha256": "c3c9f6238627f1dcde6a0d573fc5b24b069ca50a01f7f65358026a8774820ed3",
+      "bytes": 7515
+    },
+    "review-sheets/london-merton-review.csv": {
+      "sha256": "9b3909058f8ab646be4bc8635c5da979ae3cd852f4f7854d46ded285c1f00f50",
+      "bytes": 7563
+    },
+    "review-sheets/london-newham-review.csv": {
+      "sha256": "3bf54eefde968fdcb27d059879dfc4e080df1d139af2e3969255384c7611e3d0",
+      "bytes": 8457
+    },
+    "review-sheets/london-redbridge-review.csv": {
+      "sha256": "d015bc04b13f052c0f8debabeec0f925c46c69411251a9be98ee2f232757b7e2",
+      "bytes": 8215
+    },
+    "review-sheets/london-richmond-upon-thames-review.csv": {
+      "sha256": "63a79652f1f70c9e519ff380bd35b325133b40d6fa350b757130cb7a94c9e68a",
+      "bytes": 8017
+    },
+    "review-sheets/london-southwark-review.csv": {
+      "sha256": "c5b38bb89e0285a80e94592066f0e4b0bc929384262448652da418a7bc0e6e77",
+      "bytes": 8183
+    },
+    "review-sheets/london-sutton-review.csv": {
+      "sha256": "14e651172c7d87c2ccee8de4a6179868d40d0e350bf53ce2a7e287f04221b08a",
+      "bytes": 8160
+    },
+    "review-sheets/london-tower-hamlets-review.csv": {
+      "sha256": "6d32af4f6607db81b375e657c8bb9d5f4b813ffb2dd3ded7b4416d055250e14e",
+      "bytes": 7672
+    },
+    "review-sheets/london-waltham-forest-review.csv": {
+      "sha256": "3f25334d929c7f16cd8bf4a2d95448dd7fddc5357a945733493d2bfec1e70aab",
+      "bytes": 7950
+    },
+    "review-sheets/london-wandsworth-review.csv": {
+      "sha256": "c790f9fb5baa4a8bd44a5ebc9cd4b413fe86762914cd7de9be3ec10664c7768a",
+      "bytes": 7917
+    },
+    "review-sheets/london-westminster-review.csv": {
+      "sha256": "769edb22cf69bd1c06ba5b22ac43bffbde6943dbf4465a9c6554c721cbe7b005",
+      "bytes": 8183
+    },
+    "review-sheets/long-beach-review.csv": {
+      "sha256": "528aae0224d3b0cdd5a4499a6f15f7070b8e2e1fff754e4f809687bb49bd7055",
+      "bytes": 10383
+    },
+    "review-sheets/los-angeles-review.csv": {
+      "sha256": "f28d05b29ea49b572a33eebe51779d3a17eab7a17b289744279439c49f72c493",
+      "bytes": 9733
+    },
+    "review-sheets/louisville-jefferson-county-review.csv": {
+      "sha256": "f8c6494c30d33cfecdd11cb1126bbbf0e049c576032f0c57b2cfc2b5dafcbe5e",
+      "bytes": 10493
+    },
+    "review-sheets/madison-review.csv": {
+      "sha256": "bb3b7a1c0301bb01a626e19f7252d0b49b16df598ef05d8f44c71c1480ed9711",
+      "bytes": 9795
+    },
+    "review-sheets/memphis-review.csv": {
+      "sha256": "cbcee03eab7adab231a6bc0fbe81f3ca41336ad445fc069be8d9b5612d912c5e",
+      "bytes": 10431
+    },
+    "review-sheets/mesa-review.csv": {
+      "sha256": "3193c095548326ae987edce7d61ae3614d67ec00781e60c75d95bb64ee35063e",
+      "bytes": 10334
+    },
+    "review-sheets/miami-review.csv": {
+      "sha256": "46dff360cbe7a6ddb85fbe679260f09532d62cd5e926e086182372a94e40daa3",
+      "bytes": 10543
+    },
+    "review-sheets/milwaukee-review.csv": {
+      "sha256": "7dc22c11cc604177052db3e96aeaf5db4f9f19978fab481ea77ca84fc98eb791",
+      "bytes": 10207
+    },
+    "review-sheets/minneapolis-review.csv": {
+      "sha256": "c8ed56bd0b3badde1b18f55027298531dac86b0a45f8825af72b1a71bbb7594b",
+      "bytes": 9660
+    },
+    "review-sheets/missoula-county-review.csv": {
+      "sha256": "03da43471ca2d5e4ee30ccb9c7344f082442869bf5266d245aa1cb3b4abc64c9",
+      "bytes": 11444
+    },
+    "review-sheets/nashville-review.csv": {
+      "sha256": "f9fce8115c9a6073d3932c2637870a675c2ddfe57cd8c2fcb7aeab8948bde18d",
+      "bytes": 10909
+    },
+    "review-sheets/new-york-city-review.csv": {
+      "sha256": "3db0bd60e02808c4348c6888e8c576a8a75ee5aa06cb9f14d3d3b19fddc4233b",
+      "bytes": 9684
+    },
+    "review-sheets/nz-auckland-metro-review.csv": {
+      "sha256": "d5d0875e6fc00109765eb18b3548a7636a9036d32001953265b0d111fbcfb134",
+      "bytes": 6680
+    },
+    "review-sheets/nz-christchurch-metro-review.csv": {
+      "sha256": "cd159df6d66ea6c9aed4da6d695bbd8c50c24f17352b2b8a714721cd97f73b10",
+      "bytes": 6623
+    },
+    "review-sheets/nz-dunedin-metro-review.csv": {
+      "sha256": "2e035d65afaf62cd3e4b5ad2705438fc07aa1917b4a401ac585f98629e8ff2bd",
+      "bytes": 6621
+    },
+    "review-sheets/nz-hamilton-metro-review.csv": {
+      "sha256": "fd05244dd5d36d5b80dac8dc3a03d08bf983f209e61f2036189721be24381dc0",
+      "bytes": 6656
+    },
+    "review-sheets/nz-tauranga-metro-review.csv": {
+      "sha256": "209bf574aae62046efad72bb4ca5309af4f07904e71f31069467ccdb72c611e7",
+      "bytes": 6728
+    },
+    "review-sheets/nz-wellington-metro-review.csv": {
+      "sha256": "365b0746f5058a2fd2488e2905e6e1806a85c20ab5195a7ea9ba601ee7c39e44",
+      "bytes": 6980
+    },
+    "review-sheets/oakland-review.csv": {
+      "sha256": "c8a1f1e872981f46f13b91aaec37e94abbf7bf7e2d6f69b27de1908150ff02fd",
+      "bytes": 10492
+    },
+    "review-sheets/oklahoma-city-review.csv": {
+      "sha256": "839249a2e4f104e58823c5349a512f86870bc43ee37b1b954f41e9f6a12f1292",
+      "bytes": 10104
+    },
+    "review-sheets/omaha-review.csv": {
+      "sha256": "022a492c64be4c3ec28ea194149a1ac3a9d10be93203243027cb397e6dc324b1",
+      "bytes": 9613
+    },
+    "review-sheets/orlando-review.csv": {
+      "sha256": "bb3693fda88b1ce129cb1f8331530c0f7fdb795f9e9efda1d55898aff4490dde",
+      "bytes": 10492
+    },
+    "review-sheets/pending/chicago-review.csv": {
+      "sha256": "a825fae840bcb1c94b9367655b9fece645d75a252037d19fbea849aa22dad995",
+      "bytes": 9109
+    },
+    "review-sheets/pending/london-barking-and-dagenham-review.csv": {
+      "sha256": "6306cb6f66a288866b4fd48253cfee30a46e8591a0a8a4d4efa8c2be268a8743",
+      "bytes": 7591
+    },
+    "review-sheets/pending/london-barnet-review.csv": {
+      "sha256": "94178644d8d623ab8819f14bb6b6d5aab0286409470a5dda2ec7164dca6a12fa",
+      "bytes": 7890
+    },
+    "review-sheets/pending/london-bexley-review.csv": {
+      "sha256": "8d92f47a3e88913c53b85979e7b4f2f71ed5b910c3a3d011a74cfa9529d78ef5",
+      "bytes": 7885
+    },
+    "review-sheets/pending/london-brent-review.csv": {
+      "sha256": "ed7ed2d1644c0da1c3bf5158aa453a56f665ecdfa534a7a46414d3ca42a04899",
+      "bytes": 8412
+    },
+    "review-sheets/pending/london-bromley-review.csv": {
+      "sha256": "c008bfed4980c41c4bf6bd45fa46f0fdd2277d6f83328b6eccea70516d9f0f1f",
+      "bytes": 8438
+    },
+    "review-sheets/pending/london-camden-review.csv": {
+      "sha256": "b23b9f980a21fd65938d62602737db252600fcf7e323234fa0e340295d9a9001",
+      "bytes": 8131
+    },
+    "review-sheets/pending/london-city-of-london-review.csv": {
+      "sha256": "2a089fcab547b3d2c01d49422d0cdc24ca2b86ae64da073c5d1b927cbb15c622",
+      "bytes": 8058
+    },
+    "review-sheets/pending/london-croydon-review.csv": {
+      "sha256": "702fe41614d8dc63127f788eed1ad27d99185d2e9f8922d751698db330c5ee40",
+      "bytes": 8229
+    },
+    "review-sheets/pending/london-ealing-review.csv": {
+      "sha256": "fe667de4eab07d07133ddd5552387fccf253ffa63929f79d30c5a72d306f8bca",
+      "bytes": 8172
+    },
+    "review-sheets/pending/london-enfield-review.csv": {
+      "sha256": "124433af2d644717b690868e876324e286ae524919038adb015c97b713ba8009",
+      "bytes": 8231
+    },
+    "review-sheets/pending/london-greenwich-review.csv": {
+      "sha256": "f0f32cccd2aa04408796a51d20044d4c7fe73e557f316a33da525f1e91575d0d",
+      "bytes": 7876
+    },
+    "review-sheets/pending/london-hackney-review.csv": {
+      "sha256": "bf83d0c118af202849375b82a5d9910c63e19a4b932003c36ffc64d08b1fed40",
+      "bytes": 7835
+    },
+    "review-sheets/pending/london-hammersmith-and-fulham-review.csv": {
+      "sha256": "75afe3adfe2a3c90523aa89e33dd6d70a95e23a95244529bab7f665586519b5e",
+      "bytes": 7963
+    },
+    "review-sheets/pending/london-haringey-review.csv": {
+      "sha256": "89f205463c5d806fbc8659690fca8d9fac30ef4a0424297ac42c8f3afcd73669",
+      "bytes": 8129
+    },
+    "review-sheets/pending/london-harrow-review.csv": {
+      "sha256": "5c25f4c2d8c91e36c07f1b81cce1a685b94368be08c19585ac37ef1a46a46919",
+      "bytes": 7820
+    },
+    "review-sheets/pending/london-havering-review.csv": {
+      "sha256": "fa7f364882b31ef49e9d9477fcc17931c40b4230f96fc758e2c379789615c7b9",
+      "bytes": 8491
+    },
+    "review-sheets/pending/london-hillingdon-review.csv": {
+      "sha256": "876cb7863392d7c7fae717f73a98ef9f30937b2b6a35d1c5d4093feb572b75a2",
+      "bytes": 8130
+    },
+    "review-sheets/pending/london-hounslow-review.csv": {
+      "sha256": "09667663ae4bbe8c5d2d53b963f820f4006d99fa319ad52b6b17e34a322cd227",
+      "bytes": 8471
+    },
+    "review-sheets/pending/london-islington-review.csv": {
+      "sha256": "e7292ef7b4c499e407501e0384207de47480f940cc655cffba6eb2c6af63c235",
+      "bytes": 7870
+    },
+    "review-sheets/pending/london-kensington-and-chelsea-review.csv": {
+      "sha256": "28ea9444c6dcd76f32a6852278069ea2b341e4a572d85ffd94f6ded2c159ce41",
+      "bytes": 8341
+    },
+    "review-sheets/pending/london-kingston-upon-thames-review.csv": {
+      "sha256": "97280708d433c4de7986290710c7c92f3d5d9ff401d94a7ba27c9f19d1fd72d3",
+      "bytes": 8023
+    },
+    "review-sheets/pending/london-lambeth-review.csv": {
+      "sha256": "304dc76823a31db8e4850c61aad28daf3d3afd27db60bbb3c355afe7026e929f",
+      "bytes": 7491
+    },
+    "review-sheets/pending/london-lewisham-review.csv": {
+      "sha256": "c3c9f6238627f1dcde6a0d573fc5b24b069ca50a01f7f65358026a8774820ed3",
+      "bytes": 7515
+    },
+    "review-sheets/pending/london-merton-review.csv": {
+      "sha256": "9b3909058f8ab646be4bc8635c5da979ae3cd852f4f7854d46ded285c1f00f50",
+      "bytes": 7563
+    },
+    "review-sheets/pending/london-newham-review.csv": {
+      "sha256": "3bf54eefde968fdcb27d059879dfc4e080df1d139af2e3969255384c7611e3d0",
+      "bytes": 8457
+    },
+    "review-sheets/pending/london-redbridge-review.csv": {
+      "sha256": "d015bc04b13f052c0f8debabeec0f925c46c69411251a9be98ee2f232757b7e2",
+      "bytes": 8215
+    },
+    "review-sheets/pending/london-richmond-upon-thames-review.csv": {
+      "sha256": "63a79652f1f70c9e519ff380bd35b325133b40d6fa350b757130cb7a94c9e68a",
+      "bytes": 8017
+    },
+    "review-sheets/pending/london-southwark-review.csv": {
+      "sha256": "c5b38bb89e0285a80e94592066f0e4b0bc929384262448652da418a7bc0e6e77",
+      "bytes": 8183
+    },
+    "review-sheets/pending/london-sutton-review.csv": {
+      "sha256": "14e651172c7d87c2ccee8de4a6179868d40d0e350bf53ce2a7e287f04221b08a",
+      "bytes": 8160
+    },
+    "review-sheets/pending/london-tower-hamlets-review.csv": {
+      "sha256": "6d32af4f6607db81b375e657c8bb9d5f4b813ffb2dd3ded7b4416d055250e14e",
+      "bytes": 7672
+    },
+    "review-sheets/pending/london-waltham-forest-review.csv": {
+      "sha256": "3f25334d929c7f16cd8bf4a2d95448dd7fddc5357a945733493d2bfec1e70aab",
+      "bytes": 7950
+    },
+    "review-sheets/pending/london-wandsworth-review.csv": {
+      "sha256": "c790f9fb5baa4a8bd44a5ebc9cd4b413fe86762914cd7de9be3ec10664c7768a",
+      "bytes": 7917
+    },
+    "review-sheets/pending/london-westminster-review.csv": {
+      "sha256": "769edb22cf69bd1c06ba5b22ac43bffbde6943dbf4465a9c6554c721cbe7b005",
+      "bytes": 8183
+    },
+    "review-sheets/pending/nz-auckland-metro-review.csv": {
+      "sha256": "d5d0875e6fc00109765eb18b3548a7636a9036d32001953265b0d111fbcfb134",
+      "bytes": 6680
+    },
+    "review-sheets/pending/nz-christchurch-metro-review.csv": {
+      "sha256": "cd159df6d66ea6c9aed4da6d695bbd8c50c24f17352b2b8a714721cd97f73b10",
+      "bytes": 6623
+    },
+    "review-sheets/pending/nz-dunedin-metro-review.csv": {
+      "sha256": "2e035d65afaf62cd3e4b5ad2705438fc07aa1917b4a401ac585f98629e8ff2bd",
+      "bytes": 6621
+    },
+    "review-sheets/pending/nz-hamilton-metro-review.csv": {
+      "sha256": "fd05244dd5d36d5b80dac8dc3a03d08bf983f209e61f2036189721be24381dc0",
+      "bytes": 6656
+    },
+    "review-sheets/pending/nz-tauranga-metro-review.csv": {
+      "sha256": "209bf574aae62046efad72bb4ca5309af4f07904e71f31069467ccdb72c611e7",
+      "bytes": 6728
+    },
+    "review-sheets/pending/nz-wellington-metro-review.csv": {
+      "sha256": "365b0746f5058a2fd2488e2905e6e1806a85c20ab5195a7ea9ba601ee7c39e44",
+      "bytes": 6980
+    },
+    "review-sheets/pending/suburban-cook-county-review.csv": {
+      "sha256": "6a17da5788132feaa803917ebe9ffaaed93f23e61052378b099d87e0b800e530",
+      "bytes": 9141
+    },
+    "review-sheets/philadelphia-review.csv": {
+      "sha256": "366856c3a9aa156bb20e0e19219e6e360e9e11ceb404514835e0e694df257c9d",
+      "bytes": 10047
+    },
+    "review-sheets/phoenix-review.csv": {
+      "sha256": "b5f94f975a84e32b8e96569de431003a866b9507415ed42d2129799e7eaab220",
+      "bytes": 10546
+    },
+    "review-sheets/plainfield-review.csv": {
+      "sha256": "5aaccb86a32905623a3d5e0948d692de4d3b19291a667a2355157b6a20e5d4e2",
+      "bytes": 11432
+    },
+    "review-sheets/plymouth-review.csv": {
+      "sha256": "e8266b0d1683f5d6a2df1c22a5593133fe0dd0d6f0f3af7d95ec55f3d1ab7e43",
+      "bytes": 8941
+    },
+    "review-sheets/ponce-pr-review.csv": {
+      "sha256": "579b1784a79ba2cee89ff214f909b277a11dc95bb95d81152896a94075f81fc7",
+      "bytes": 9570
+    },
+    "review-sheets/portland-review.csv": {
+      "sha256": "c9a6bca044836a1fb12f94c1f8addf5d5e770b9303935bcbb155c2ca438cc075",
+      "bytes": 10303
+    },
+    "review-sheets/sacramento-review.csv": {
+      "sha256": "db9a99d2436fa7f74fa00f839662480c54b3e9aa153a815f0a53da971f4f89bb",
+      "bytes": 10471
+    },
+    "review-sheets/san-antonio-review.csv": {
+      "sha256": "d5c96499ece1c910097e3894dead7886fbf0478d1853da24a2c12bcfe990cbf1",
+      "bytes": 10213
+    },
+    "review-sheets/san-diego-review.csv": {
+      "sha256": "61035ecbc85c42100ed95b7739550c080b24ee0ad2e418f13f67131745043b03",
+      "bytes": 10369
+    },
+    "review-sheets/san-francisco-review.csv": {
+      "sha256": "ea821c698899bda8efae4e721cd49f96c150fd3406c342b529911a7e770c5d55",
+      "bytes": 10349
+    },
+    "review-sheets/san-jose-review.csv": {
+      "sha256": "614f0b18ee36ebefd5baf6147de941cc9869b0bfac0aeb8b491cde889e40fa2c",
+      "bytes": 10192
+    },
+    "review-sheets/san-juan-pr-review.csv": {
+      "sha256": "9907dd04998dd83f8a1da42d3f32573936163cadd899941d408a66fb594c0db2",
+      "bytes": 9600
+    },
+    "review-sheets/santiago-review.csv": {
+      "sha256": "d4bb3e78624b3cefb910461eb6005587379a7983e1b1ae161324f4daef0cc2ce",
+      "bytes": 9138
+    },
+    "review-sheets/savannah-chatham-review.csv": {
+      "sha256": "6f3248c415607af773260e48fe7045c7bcf9f7944cdec3fc44088fca92102cab",
+      "bytes": 6978
+    },
+    "review-sheets/seattle-review.csv": {
+      "sha256": "13fe9cb8135b9d5a9afd5b25d6cfbbcb9f73087ad1546ee2487c17d09ea3f440",
+      "bytes": 10480
+    },
+    "review-sheets/ssf-verified-resource-registry.json": {
+      "sha256": "f99c6c4d85e25b9758269c90e67dfe0c41d2ee66f054b5676a9dbd8414db04b9",
+      "bytes": 29084
+    },
+    "review-sheets/suburban-cook-county-review.csv": {
+      "sha256": "6a17da5788132feaa803917ebe9ffaaed93f23e61052378b099d87e0b800e530",
+      "bytes": 9141
+    },
+    "review-sheets/tucson-review.csv": {
+      "sha256": "b993ed546c25444491342a026a74628ce41cae07f6c73c0728890ed6d61b8fde",
+      "bytes": 10340
+    },
+    "review-sheets/tulsa-review.csv": {
+      "sha256": "8b82df06b8779a3325f99dd18312bba3a3c5086b591cefd1edcbd93b6da29b53",
+      "bytes": 10567
+    },
+    "review-sheets/virginia-beach-review.csv": {
+      "sha256": "fde5565f76b0fd18540f65ae2eb4ac3ffa922d54042863257a0cac624763f5b4",
+      "bytes": 10552
+    },
+    "review-sheets/volusia-review.csv": {
+      "sha256": "6a29d22934a5391def35fac72947ec9ba755f801719993d8fa06550c81abca61",
+      "bytes": 8990
+    },
+    "review-sheets/wake-review.csv": {
+      "sha256": "19fce86530150b12134944034a54fcdb2149ae637c330682a40395c3c0cdd351",
+      "bytes": 8414
+    },
+    "review-sheets/washington-dc-review.csv": {
+      "sha256": "e65c7b2d9ee761e781356e55ac4d4e41a195dee747eadd0005059cf4c78e3c0f",
+      "bytes": 10143
+    },
+    "review-sheets/yellowstone-county-review.csv": {
+      "sha256": "4ddddc859d3fa547ad7a29f69c883dbe0cbeea0090cb97193d5799892ce93360",
+      "bytes": 11203
+    },
+    "source-registry.json": {
+      "sha256": "01c82b74b1c5b567331b280a8e73a1629e84e67592b307be817e743645bfab0d",
+      "bytes": 160677
+    }
+  }
+}

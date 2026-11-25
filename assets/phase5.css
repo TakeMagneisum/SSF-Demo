@@ -1,0 +1,40 @@
+/* Phase 5 card/discovery layout; screen settings remain owned by Phase 4. */
+@media screen {
+ .phase5-controls,.phase5-filter-summary,.phase5-prep-links {display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-block:.75rem;min-width:0}
+ .phase5-controls[hidden] {display:none}
+ .phase5-filter-summary p {flex-basis:100%;margin:0}
+ .phase5-controls button,.phase5-remove,.phase5-copy,.phase5-resource-details summary {min-height:44px;padding:.55rem .7rem;font:inherit;color:var(--text);background:var(--surface-raised);border:1px solid var(--control-border);border-radius:.45rem;cursor:pointer;overflow-wrap:anywhere}
+ .phase5-controls button[aria-pressed=true] {border:2px solid currentColor;text-decoration:underline;font-weight:bold}
+ .resource-grid.phase5-list {grid-template-columns:minmax(0,1fr)}
+ .resource-card {min-height:0;min-width:0;overflow-wrap:anywhere;align-self:start}
+ .resource-card .resource-actions {margin-top:0;grid-template-columns:repeat(auto-fit,minmax(min(100%,8rem),1fr))}
+ .resource-card .resource-actions a {min-height:44px;font-size:.9rem}
+ .resource-card :is(.resource-summary,.resource-next,.resource-detail,.phase5-topics) {font-size:.95rem;line-height:var(--reading-leading,1.6)}
+ .phase5-topics {color:var(--text-muted);margin:0 0 .5rem}
+ .phase5-urgent-label {font-weight:700;border-inline-start:4px solid currentColor;padding-inline-start:.65rem}
+ .phase5-resource-details {margin-block:.7rem;border-top:1px solid var(--border);padding-top:.5rem}
+ .phase5-resource-details summary {font-weight:600;line-height:1.4}
+ .phase5-resource-details a,.phase5-prep-links a {display:inline-block;color:var(--link);text-decoration:underline;min-height:44px;padding:.5rem 0}
+ .resource-card .resource-check {font-size:.9rem;color:var(--text-muted)}
+ .phase5-prep-links a {margin-inline-end:.6rem}
+ .phase5-copy-status {min-height:1.5em;color:var(--text)}
+ .filter-chip {min-height:44px;font-size:.85rem}
+ @media(max-width:600px) {.phase5-controls button,.phase5-remove {flex:1 1 auto}.resource-grid {grid-template-columns:minmax(0,1fr)}}
+ @media(forced-colors:active) {.phase5-controls button,.phase5-remove,.phase5-resource-details summary,.phase5-copy {border:1px solid ButtonText;color:ButtonText;background:ButtonFace}.phase5-controls button[aria-pressed=true]{border:3px solid Highlight}}
+}
+@media print {.phase5-controls,.phase5-filter-summary,.phase5-copy,.phase5-copy-status,.phase5-resource-details {display:none!important}.resource-card .resource-next,.resource-card .resource-detail,.resource-card .phase5-topics {display:block!important}}
+
+.phase6-print-url {display:none}
+@media print {
+ body.finder-page:not(.reviewing-sheet) .urgent-cards {display:block!important; color:#000!important;background:#fff!important;}
+ body.finder-page:not(.reviewing-sheet) .urgent-cards * {color:#000!important;background:#fff!important;box-shadow:none!important;}
+ body.finder-page:not(.reviewing-sheet) .resource-card,body.finder-page:not(.reviewing-sheet) .resource-card * {color:#000!important;background:#fff!important;box-shadow:none!important;text-shadow:none!important;}
+ .resource-card .phase6-print-url {display:block;overflow-wrap:anywhere;}
+}
+
+/* Phase 7: keep the urgent result itself, not the visitor query, on directory printouts. */
+@media print {
+ body.finder-page:not(.reviewing-sheet) #guide-answer.urgent-answer:not([hidden]) {display:block!important;break-inside:avoid;overflow-wrap:anywhere;color:#000!important;background:#fff!important;border:2px solid #000!important;box-shadow:none!important;}
+ body.finder-page:not(.reviewing-sheet) #guide-answer.urgent-answer:not([hidden]) * {color:#000!important;background:#fff!important;text-shadow:none!important;}
+ body.finder-page:not(.reviewing-sheet) #guide-answer :is(.answer-mark,.answer-actions) {display:none!important;}
+}

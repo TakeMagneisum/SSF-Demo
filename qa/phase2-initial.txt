@@ -1,0 +1,32 @@
+v22.16.0
+Python 3.13.5
+$ python scripts/phase1-data-baseline.py
+Protected data baseline passed: 201 unchanged files
+exit=0
+$ node scripts/validate-data.js
+Validation passed: 106 editions, 3487 edition-listings, 16 directory categories (Omaha pet-listing gap disclosed), 13 discovery topics, accessibility-and-inclusion page, routing integrity, HTTPS links, reviewer sheets, Calm View with pictograms, and 140+ urgent-language cases.
+exit=0
+$ node scripts/validate-explore-map.cjs
+106 exact list routes, 33 unique SVG routes, country filters, search, pointer and keyboard handlers, and missing-geometry fallback passed.
+World landing, lazy geometry, Caribbean → Puerto Rico, uncovered country, Back, and map failure fallbacks passed.
+60 US guides across 29 jurisdictions. All 51 state routes, map coverage, search, ZIP fallback, Back/reset, and missing geometry passed.
+159 Georgia county routes and shapes, crosswalk, Savannah search, ZIP fallback, Back and missing geometry passed.
+exit=0
+$ python validate-guides.py
+{
+  "status": "PASS",
+  "checked_on": "2026-11-18",
+  "guides": 41,
+  "resource_placements": 1181,
+  "distinct_source_pages": 250,
+  "category_coverage_cells": 656,
+  "errors": [],
+  "limitations": "Offline integrity checks only. Source retrieval and content review are recorded separately; local operational review remains pending."
+}
+exit=0
+$ python scripts/validate-demo-links.py
+66 HTML files; 946 resolved local references; 0 main-route issues; 0 legacy issues
+exit=0
+$ node scripts/audit-resources.js --offline
+Audit wrote output/resource-audit.{json,md}: 0 broken, 1 stale, 0 blocked, 0 warnings.
+exit=0
